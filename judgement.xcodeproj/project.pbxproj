@@ -28,6 +28,7 @@
 		76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243818FB2613007DC30B /* JDGApiClient.m */; };
 		76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243E18FB323F007DC30B /* JDGApiRequest.m */; };
 		76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5244118FB35C7007DC30B /* JDGGetQuestionsApiRequest.m */; };
+		76C5244518FC5289007DC30B /* JDGRegisterApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5244418FC5289007DC30B /* JDGRegisterApiRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		76C5243E18FB323F007DC30B /* JDGApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGApiRequest.m; sourceTree = "<group>"; };
 		76C5244018FB35C7007DC30B /* JDGGetQuestionsApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGGetQuestionsApiRequest.h; sourceTree = "<group>"; };
 		76C5244118FB35C7007DC30B /* JDGGetQuestionsApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGGetQuestionsApiRequest.m; sourceTree = "<group>"; };
+		76C5244318FC5289007DC30B /* JDGRegisterApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGRegisterApiRequest.h; sourceTree = "<group>"; };
+		76C5244418FC5289007DC30B /* JDGRegisterApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGRegisterApiRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				76C5243E18FB323F007DC30B /* JDGApiRequest.m */,
 				76C5244018FB35C7007DC30B /* JDGGetQuestionsApiRequest.h */,
 				76C5244118FB35C7007DC30B /* JDGGetQuestionsApiRequest.m */,
+				76C5244318FC5289007DC30B /* JDGRegisterApiRequest.h */,
+				76C5244418FC5289007DC30B /* JDGRegisterApiRequest.m */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				7659929618F1AAC3002A1EDA /* main.m in Sources */,
 				76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */,
 				765992A618F1AAC3002A1EDA /* JDGDetailViewController.m in Sources */,
+				76C5244518FC5289007DC30B /* JDGRegisterApiRequest.m in Sources */,
 				76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */,
 				76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */,
 			);

@@ -11,6 +11,8 @@
 @class JDGApiRequest;
 
 typedef void (^getQuestionsCallback)(NSArray *);
+typedef void (^registerCallback) (void);
+
 typedef void (^requestFailCallback) (void);
 
 @interface JDGApiClient : NSObject
