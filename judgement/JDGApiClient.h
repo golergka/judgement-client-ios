@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @class JDGApiRequest;
+@class JDGGetQuestionsApiRequest;
+@class JDGRegisterApiRequest;
 
 typedef void (^getQuestionsCallback)(NSArray *);
 typedef void (^registerCallback) (void);
@@ -21,6 +23,12 @@ typedef void (^requestFailCallback) (void);
 
 -(void)getQuestionsWithSuccessCallback:(getQuestionsCallback)onSuccess
                           failCallback:(requestFailCallback)onFail;
+
+-(void)registerWithVendorIdHash:(NSString*)vendorIdHash
+                successCallback:(registerCallback)onSuccess
+                   failCallback:(requestFailCallback)onFail;
+
+
 
 -(NSURL*)urlForParams:(NSDictionary*)params;
 -(void)completeRequest:(JDGApiRequest*)request;

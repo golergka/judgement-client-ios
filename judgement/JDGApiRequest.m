@@ -8,18 +8,26 @@
 
 #import "JDGApiRequest.h"
 
+@interface JDGApiRequest ()
+
+@property(readwrite, copy) requestFailCallback _onFail;
+
+@end
+
 @implementation JDGApiRequest
 {
-    NSMutableData       *_responseData;
+    NSMutableData*  _responseData;
+    
 }
+@synthesize onFail;
 
 -(id)initWithApiClient:(JDGApiClient *)client
-          failCallback:(requestFailCallback)onFail
+          failCallback:(requestFailCallback)onFailCallback
 {
     if (self = [super init])
     {
         _apiClient = client;
-        _onFail = onFail;
+        onFail = onFailCallback;
     }
     return self;
 }
@@ -48,7 +56,8 @@
 #if DEBUG
         NSLog(@"Error: %@", error);
 #endif
-        _onFail();
+        self.onFail();
+        [_apiClient completeRequest:self];
     } else {
         id content = [responseJson objectForKey:@"content"];
         [self processContent:content];

@@ -8,7 +8,10 @@
 
 #import "JDGApiClient.h"
 #import "NSDictionary+JDGUrlEncoding.h"
+
+#import "JDGApiRequest.h"
 #import "JDGGetQuestionsApiRequest.h"
+#import "JDGRegisterApiRequest.h"
 
 static JDGApiClient *sharedClient;
 
@@ -45,6 +48,19 @@ static JDGApiClient *sharedClient;
     [requests addObject:[[JDGGetQuestionsApiRequest alloc] initWithApiClient:self
                                                              successCallback:onSuccess
                                                                 failCallback:onFail]];
+}
+
+-(void)registerWithVendorIdHash:(NSString *)vendorIdHash
+                successCallback:(registerCallback)onSuccess
+                   failCallback:(requestFailCallback)onFail
+{
+#if DEBUG
+    NSLog(@"register");
+#endif
+    [requests addObject:[[JDGRegisterApiRequest alloc] initWithApiClient:self
+                                                            vendorIdHash:vendorIdHash
+                                                         successCallback:onSuccess
+                                                            failCallback:onFail]];
 }
 
 #pragma mark Request helpers

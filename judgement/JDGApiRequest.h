@@ -11,11 +11,9 @@
 #import "JDGApiClient.h"
 
 @interface JDGApiRequest : NSObject <NSURLConnectionDataDelegate>
-{
-    @protected
-    requestFailCallback _onFail;
-    JDGApiClient*       _apiClient;
-}
+
+@property(readwrite,copy) requestFailCallback   onFail;
+@property(readonly, weak) JDGApiClient*         apiClient;
 
 -(id)initWithApiClient:(JDGApiClient*)client
           failCallback:(requestFailCallback)onFail;

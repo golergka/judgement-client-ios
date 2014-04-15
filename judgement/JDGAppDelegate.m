@@ -8,6 +8,8 @@
 
 #import "JDGAppDelegate.h"
 
+#define kRegisteredKey @"Registered"
+
 @implementation JDGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,6 +20,17 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kRegisteredKey]) {
+        
+        NSString *vendorId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        
+        [[JDGApiClient sharedClient] registerWithVendorIdHash:vendorId successCallback:^{
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kRegisteredKey];
+            return;
+        } failCallback:nil];
+    }
+    
     return YES;
 }
 							

@@ -43,7 +43,7 @@
         [questionsArray addObject:[JDGQuestion questionFromJson:questionsJsonArray[i]]];
     }
     _onSuccess(questionsArray);
-    [_apiClient completeRequest:self];
+    [self.apiClient completeRequest:self];
 }
 
 @end

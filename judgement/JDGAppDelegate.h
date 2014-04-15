@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JDGApiClient.h"
 
 @interface JDGAppDelegate : UIResponder <UIApplicationDelegate>
 
