@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JDGQuestion : NSObject
+#import "JDGModel.h"
+
+@interface JDGQuestion : JDGModel
 
 @property NSString * text;
 @property NSDate * date;
-@property int uid;
-
-+ (id) questionFromJson:(NSDictionary *)questionJson;
 
 @end

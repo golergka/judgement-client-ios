@@ -40,7 +40,8 @@
     NSMutableArray *questionsArray = [[NSMutableArray alloc] init];
     for(int i = 0; i < questionsJsonArray.count; i++)
     {
-        [questionsArray addObject:[JDGQuestion questionFromJson:questionsJsonArray[i]]];
+        JDGQuestion *result = [[JDGQuestion alloc] initWithJson:questionsJsonArray[i]];
+        [questionsArray addObject:result];
     }
     _onSuccess(questionsArray);
     [self.apiClient completeRequest:self];

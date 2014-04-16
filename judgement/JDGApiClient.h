@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "JDGAnswer.h"
+#import "JDGUser.h"
+
 @class JDGApiRequest;
 @class JDGGetQuestionsApiRequest;
 @class JDGRegisterApiRequest;
 
 typedef void (^getQuestionsCallback)(NSArray *);
-typedef void (^registerCallback) (void);
+typedef void (^registerCallback)    (JDGUser *);
+typedef void (^getAnswerCallback)   (JDGAnswer *);
 
 typedef void (^requestFailCallback) (void);
 

@@ -7,22 +7,20 @@
 //
 
 #import "JDGQuestion.h"
+#import "JDGModel.h"
 
 @implementation JDGQuestion
 @synthesize text, date;
 
-+(id) questionFromJson:(NSDictionary *)questionJson
+-(id) initWithJson:(NSDictionary *)json
 {
-    JDGQuestion *result = [[JDGQuestion alloc] init];
-    result.uid = [[questionJson objectForKey:@"id"] intValue];
-    result.text = [questionJson objectForKey:@"text"];
-    
-    NSDateFormatter *jsonDateFormat = [[NSDateFormatter alloc] init];
-    [jsonDateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
-    
-    result.date = [jsonDateFormat dateFromString:[questionJson objectForKey:@"date"]];
-    
-    return result;
+    if (self = [super init])
+    {
+        self.text = [json objectForKey:@"text"];
+        NSString *dateString = [json objectForKey:@"date"];
+        self.date = [[JDGModel jsonDateFormatter] dateFromString:dateString];
+    }
+    return self;
 }
 
 @end

@@ -29,6 +29,10 @@
 		76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243E18FB323F007DC30B /* JDGApiRequest.m */; };
 		76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5244118FB35C7007DC30B /* JDGGetQuestionsApiRequest.m */; };
 		76C5244518FC5289007DC30B /* JDGRegisterApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5244418FC5289007DC30B /* JDGRegisterApiRequest.m */; };
+		76C5245118FF009B007DC30B /* JDGGetAnswerApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245018FF009B007DC30B /* JDGGetAnswerApiRequest.m */; };
+		76C5245418FF0463007DC30B /* JDGAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245318FF0463007DC30B /* JDGAnswer.m */; };
+		76C5245718FF067B007DC30B /* JDGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245618FF067B007DC30B /* JDGModel.m */; };
+		76C5245A18FF0DAB007DC30B /* JDGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245918FF0DAB007DC30B /* JDGUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,14 @@
 		76C5244118FB35C7007DC30B /* JDGGetQuestionsApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGGetQuestionsApiRequest.m; sourceTree = "<group>"; };
 		76C5244318FC5289007DC30B /* JDGRegisterApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGRegisterApiRequest.h; sourceTree = "<group>"; };
 		76C5244418FC5289007DC30B /* JDGRegisterApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGRegisterApiRequest.m; sourceTree = "<group>"; };
+		76C5244F18FF009B007DC30B /* JDGGetAnswerApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGGetAnswerApiRequest.h; sourceTree = "<group>"; };
+		76C5245018FF009B007DC30B /* JDGGetAnswerApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGGetAnswerApiRequest.m; sourceTree = "<group>"; };
+		76C5245218FF0463007DC30B /* JDGAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGAnswer.h; sourceTree = "<group>"; };
+		76C5245318FF0463007DC30B /* JDGAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGAnswer.m; sourceTree = "<group>"; };
+		76C5245518FF067B007DC30B /* JDGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGModel.h; sourceTree = "<group>"; };
+		76C5245618FF067B007DC30B /* JDGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGModel.m; sourceTree = "<group>"; };
+		76C5245818FF0DAB007DC30B /* JDGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGUser.h; sourceTree = "<group>"; };
+		76C5245918FF0DAB007DC30B /* JDGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +198,12 @@
 			children = (
 				765992C418F1BBD7002A1EDA /* JDGQuestion.h */,
 				765992C518F1BBD7002A1EDA /* JDGQuestion.m */,
+				76C5245218FF0463007DC30B /* JDGAnswer.h */,
+				76C5245318FF0463007DC30B /* JDGAnswer.m */,
+				76C5245518FF067B007DC30B /* JDGModel.h */,
+				76C5245618FF067B007DC30B /* JDGModel.m */,
+				76C5245818FF0DAB007DC30B /* JDGUser.h */,
+				76C5245918FF0DAB007DC30B /* JDGUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -210,6 +228,8 @@
 				76C5244118FB35C7007DC30B /* JDGGetQuestionsApiRequest.m */,
 				76C5244318FC5289007DC30B /* JDGRegisterApiRequest.h */,
 				76C5244418FC5289007DC30B /* JDGRegisterApiRequest.m */,
+				76C5244F18FF009B007DC30B /* JDGGetAnswerApiRequest.h */,
+				76C5245018FF009B007DC30B /* JDGGetAnswerApiRequest.m */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -321,8 +341,12 @@
 				76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */,
 				765992A618F1AAC3002A1EDA /* JDGDetailViewController.m in Sources */,
 				76C5244518FC5289007DC30B /* JDGRegisterApiRequest.m in Sources */,
+				76C5245A18FF0DAB007DC30B /* JDGUser.m in Sources */,
+				76C5245718FF067B007DC30B /* JDGModel.m in Sources */,
+				76C5245118FF009B007DC30B /* JDGGetAnswerApiRequest.m in Sources */,
 				76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */,
 				76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */,
+				76C5245418FF0463007DC30B /* JDGAnswer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

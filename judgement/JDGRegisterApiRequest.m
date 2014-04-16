@@ -7,6 +7,7 @@
 //
 
 #import "JDGRegisterApiRequest.h"
+#import "JDGUser.h"
 
 @implementation JDGRegisterApiRequest
 {
@@ -35,7 +36,8 @@
 
 -(void)processContent:(id)content
 {
-    self.onSuccess();
+    JDGUser *result = [[JDGUser alloc] initWithJson:(NSDictionary*)content];
+    self.onSuccess(result);
     [self.apiClient completeRequest:self];
 }
 
