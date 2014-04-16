@@ -36,6 +36,9 @@
 
 -(void)processContent:(id)content
 {
+#if DEBUG
+    NSLog(@"Registration: %@", content);
+#endif
     JDGUser *result = [[JDGUser alloc] initWithJson:(NSDictionary*)content];
     self.onSuccess(result);
     [self.apiClient completeRequest:self];

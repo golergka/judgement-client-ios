@@ -12,6 +12,7 @@
 #import "JDGApiRequest.h"
 #import "JDGGetQuestionsApiRequest.h"
 #import "JDGRegisterApiRequest.h"
+#import "JDGGetAnswerApiRequest.h"
 
 static JDGApiClient *sharedClient;
 
@@ -61,6 +62,21 @@ static JDGApiClient *sharedClient;
                                                             vendorIdHash:vendorIdHash
                                                          successCallback:onSuccess
                                                             failCallback:onFail]];
+}
+
+-(void)getAnswerWithUser:(JDGUser *)user
+                question:(JDGQuestion *)question
+         successCallback:(getAnswerCallback)onSuccess
+            failCallback:(requestFailCallback)onFail
+{
+#if DEBUG
+    NSLog(@"getAnswer");
+#endif
+    [requests addObject:[[JDGGetAnswerApiRequest alloc] initWithApiClient:self
+                                                                     user:user
+                                                                 question:question
+                                                          successCallback:onSuccess
+                                                             failCallback:onFail]];
 }
 
 #pragma mark Request helpers

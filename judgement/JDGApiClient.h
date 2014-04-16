@@ -32,6 +32,10 @@ typedef void (^requestFailCallback) (void);
                 successCallback:(registerCallback)onSuccess
                    failCallback:(requestFailCallback)onFail;
 
+-(void)getAnswerWithUser:(JDGUser *)user
+                question:(JDGQuestion *)question
+         successCallback:(getAnswerCallback)onSuccess
+            failCallback:(requestFailCallback)onFail;
 
 
 -(NSURL*)urlForParams:(NSDictionary*)params;

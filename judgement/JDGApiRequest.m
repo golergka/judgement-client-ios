@@ -56,7 +56,8 @@
 #if DEBUG
         NSLog(@"Error: %@", error);
 #endif
-        self.onFail();
+        if (onFail)
+            self.onFail();
         [_apiClient completeRequest:self];
     } else {
         id content = [responseJson objectForKey:@"content"];

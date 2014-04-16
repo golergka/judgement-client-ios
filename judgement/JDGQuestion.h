@@ -10,9 +10,13 @@
 
 #import "JDGModel.h"
 
+@class JDGAnswer;
+
 @interface JDGQuestion : JDGModel
 
 @property NSString * text;
 @property NSDate * date;
+
+@property JDGAnswer * myAnswer;
 
 @end
