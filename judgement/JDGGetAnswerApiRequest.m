@@ -35,8 +35,8 @@
         self.question = question;
         NSDictionary *params = @{
             @"method":      @"getAnswer",
-            @"questionId":  [NSNumber numberWithInt:user.uid],
-            @"userId":      [NSNumber numberWithInt:question.uid]
+            @"questionId":  [NSNumber numberWithInt:question.uid],
+            @"userId":      [NSNumber numberWithInt:user.uid]
         };
         NSURL *url = [client urlForParams:params];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
