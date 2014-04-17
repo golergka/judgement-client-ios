@@ -98,6 +98,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
                     <connections>
+                        <outlet property="questionAnswerControl" destination="44k-cv-YGV" id="HZO-hv-GjH"/>
                         <outlet property="questionTextLabel" destination="Lei-5M-9Gs" id="3rV-Vs-bH5"/>
                     </connections>
                 </viewController>

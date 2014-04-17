@@ -10,6 +10,8 @@
 
 #import "JDGModel.h"
 
+#define JDGQuestionDidUpdateNotification @"JDGQuestionDidUpdateNotification"
+
 @class JDGAnswer;
 
 @interface JDGQuestion : JDGModel
@@ -17,6 +19,8 @@
 @property NSString * text;
 @property NSDate * date;
 
-@property JDGAnswer * myAnswer;
+@property(readonly) JDGAnswer * myAnswer;
+
+-(void)answerWithValue:(BOOL)value;
 
 @end

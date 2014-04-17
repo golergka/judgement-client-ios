@@ -7,11 +7,12 @@
 //
 
 #import "JDGRegisterApiRequest.h"
-#import "JDGUser.h"
+#import "JDGValidatedUser.h"
 
 @implementation JDGRegisterApiRequest
 {
     NSURLConnection* _connection;
+    NSString* _vendorIdHash;
 }
 
 -(id)initWithApiClient:(JDGApiClient *)client
@@ -22,6 +23,7 @@
     if (self = [super initWithApiClient:client
                            failCallback:onFail])
     {
+        _vendorIdHash = vendorIdHash;
         NSDictionary *params = @{
             @"method": @"register",
             @"vendorIdHash": vendorIdHash
@@ -39,7 +41,8 @@
 #if DEBUG
     NSLog(@"Registration: %@", content);
 #endif
-    JDGUser *result = [[JDGUser alloc] initWithJson:(NSDictionary*)content];
+    JDGValidatedUser *result = [[JDGValidatedUser alloc] initWithJson:(NSDictionary*)content];
+    result.vendorIdHash = _vendorIdHash;
     self.onSuccess(result);
     [self.apiClient completeRequest:self];
 }

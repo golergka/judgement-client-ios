@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 
 #import "JDGAnswer.h"
-#import "JDGUser.h"
+#import "JDGValidatedUser.h"
 
 @class JDGApiRequest;
 @class JDGGetQuestionsApiRequest;
 @class JDGRegisterApiRequest;
 
 typedef void (^getQuestionsCallback)(NSArray *);
-typedef void (^registerCallback)    (JDGUser *);
+typedef void (^registerCallback)    (JDGValidatedUser *);
 typedef void (^getAnswerCallback)   (JDGAnswer *);
+typedef void (^answerCallback)      (void);
 
 typedef void (^requestFailCallback) (void);
 
@@ -32,10 +33,16 @@ typedef void (^requestFailCallback) (void);
                 successCallback:(registerCallback)onSuccess
                    failCallback:(requestFailCallback)onFail;
 
--(void)getAnswerWithUser:(JDGUser *)user
+-(void)getAnswerWithUser:(JDGValidatedUser *)user
                 question:(JDGQuestion *)question
          successCallback:(getAnswerCallback)onSuccess
             failCallback:(requestFailCallback)onFail;
+
+-(void)answerWithUser:(JDGValidatedUser *)user
+             question:(JDGQuestion *)question
+          answerValue:(BOOL)answerValue
+      successCallback:(answerCallback)onSuccess
+         failCallback:(requestFailCallback)onFail;
 
 
 -(NSURL*)urlForParams:(NSDictionary*)params;

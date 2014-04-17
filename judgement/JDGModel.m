@@ -47,4 +47,9 @@ static NSDateFormatter* jsonDateFormatter;
     return self;
 }
 
+-(void)refresh
+{
+    // abstract method
+}
+
 @end

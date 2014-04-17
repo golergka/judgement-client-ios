@@ -18,4 +18,6 @@
 
 +(NSDateFormatter*)jsonDateFormatter;
 
+-(void)refresh;
+
 @end

@@ -11,7 +11,7 @@
 
 @interface JDGGetAnswerApiRequest()
 
-@property JDGUser *user;
+@property JDGValidatedUser *user;
 @property JDGQuestion *question;
 
 @end
@@ -23,7 +23,7 @@
 }
 
 -(id)initWithApiClient:(JDGApiClient *)client
-                  user:(JDGUser *)user
+                  user:(JDGValidatedUser *)user
               question:(JDGQuestion *)question
        successCallback:(getAnswerCallback)onSuccess
           failCallback:(requestFailCallback)onFail

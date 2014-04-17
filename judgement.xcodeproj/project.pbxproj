@@ -32,7 +32,9 @@
 		76C5245118FF009B007DC30B /* JDGGetAnswerApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245018FF009B007DC30B /* JDGGetAnswerApiRequest.m */; };
 		76C5245418FF0463007DC30B /* JDGAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245318FF0463007DC30B /* JDGAnswer.m */; };
 		76C5245718FF067B007DC30B /* JDGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245618FF067B007DC30B /* JDGModel.m */; };
-		76C5245A18FF0DAB007DC30B /* JDGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245918FF0DAB007DC30B /* JDGUser.m */; };
+		76C5245A18FF0DAB007DC30B /* JDGValidatedUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245918FF0DAB007DC30B /* JDGValidatedUser.m */; };
+		76C5245D190054C3007DC30B /* JDGAnswerApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245C190054C3007DC30B /* JDGAnswerApiRequest.m */; };
+		76C5246019005964007DC30B /* JDGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5245F19005964007DC30B /* JDGUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +88,12 @@
 		76C5245318FF0463007DC30B /* JDGAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGAnswer.m; sourceTree = "<group>"; };
 		76C5245518FF067B007DC30B /* JDGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGModel.h; sourceTree = "<group>"; };
 		76C5245618FF067B007DC30B /* JDGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGModel.m; sourceTree = "<group>"; };
-		76C5245818FF0DAB007DC30B /* JDGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGUser.h; sourceTree = "<group>"; };
-		76C5245918FF0DAB007DC30B /* JDGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGUser.m; sourceTree = "<group>"; };
+		76C5245818FF0DAB007DC30B /* JDGValidatedUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGValidatedUser.h; sourceTree = "<group>"; };
+		76C5245918FF0DAB007DC30B /* JDGValidatedUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGValidatedUser.m; sourceTree = "<group>"; };
+		76C5245B190054C3007DC30B /* JDGAnswerApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGAnswerApiRequest.h; sourceTree = "<group>"; };
+		76C5245C190054C3007DC30B /* JDGAnswerApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGAnswerApiRequest.m; sourceTree = "<group>"; };
+		76C5245E19005964007DC30B /* JDGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGUser.h; sourceTree = "<group>"; };
+		76C5245F19005964007DC30B /* JDGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,8 +208,10 @@
 				76C5245318FF0463007DC30B /* JDGAnswer.m */,
 				76C5245518FF067B007DC30B /* JDGModel.h */,
 				76C5245618FF067B007DC30B /* JDGModel.m */,
-				76C5245818FF0DAB007DC30B /* JDGUser.h */,
-				76C5245918FF0DAB007DC30B /* JDGUser.m */,
+				76C5245818FF0DAB007DC30B /* JDGValidatedUser.h */,
+				76C5245918FF0DAB007DC30B /* JDGValidatedUser.m */,
+				76C5245E19005964007DC30B /* JDGUser.h */,
+				76C5245F19005964007DC30B /* JDGUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -230,6 +238,8 @@
 				76C5244418FC5289007DC30B /* JDGRegisterApiRequest.m */,
 				76C5244F18FF009B007DC30B /* JDGGetAnswerApiRequest.h */,
 				76C5245018FF009B007DC30B /* JDGGetAnswerApiRequest.m */,
+				76C5245B190054C3007DC30B /* JDGAnswerApiRequest.h */,
+				76C5245C190054C3007DC30B /* JDGAnswerApiRequest.m */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -333,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C5245D190054C3007DC30B /* JDGAnswerApiRequest.m in Sources */,
 				7659929A18F1AAC3002A1EDA /* JDGAppDelegate.m in Sources */,
 				76C5243518FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m in Sources */,
 				765992C618F1BBD7002A1EDA /* JDGQuestion.m in Sources */,
@@ -340,8 +351,9 @@
 				7659929618F1AAC3002A1EDA /* main.m in Sources */,
 				76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */,
 				765992A618F1AAC3002A1EDA /* JDGQuestionDetailViewController.m in Sources */,
+				76C5246019005964007DC30B /* JDGUser.m in Sources */,
 				76C5244518FC5289007DC30B /* JDGRegisterApiRequest.m in Sources */,
-				76C5245A18FF0DAB007DC30B /* JDGUser.m in Sources */,
+				76C5245A18FF0DAB007DC30B /* JDGValidatedUser.m in Sources */,
 				76C5245718FF067B007DC30B /* JDGModel.m in Sources */,
 				76C5245118FF009B007DC30B /* JDGGetAnswerApiRequest.m in Sources */,
 				76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */,

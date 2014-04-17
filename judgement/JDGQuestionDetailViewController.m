@@ -7,10 +7,12 @@
 //
 
 #import "JDGQuestionDetailViewController.h"
+#import "JDGAnswer.h"
 
 @interface JDGQuestionDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-- (void)configureView;
+-(void)configureView;
+-(void)update;
 @end
 
 @implementation JDGQuestionDetailViewController
@@ -20,8 +22,21 @@
 - (void)setQuestion:(JDGQuestion *)newQuestion
 {
     if (_question != newQuestion) {
+        if (_question)
+        {
+            [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                            name:JDGQuestionDidUpdateNotification
+                                                          object:_question];
+        }
         _question = newQuestion;
         [self configureView];
+        if (_question)
+        {
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(configureView)
+                                                         name:JDGQuestionDidUpdateNotification
+                                                       object:_question];
+        }
     }
 
     if (self.masterPopoverController != nil) {
@@ -32,9 +47,32 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
     if (self.question) {
         self.questionTextLabel.text = [self.question text];
+        JDGAnswer* myAnswer = self.question.myAnswer;
+        if (myAnswer)
+        {
+            if (myAnswer.value)
+            {
+                self.questionAnswerControl.selectedSegmentIndex = 0;
+            }
+            else
+            {
+                self.questionAnswerControl.selectedSegmentIndex = 1;
+            }
+        }
+        else
+        {
+            self.questionAnswerControl.selectedSegmentIndex = -1;
+        }
+    }
+}
+
+-(void)answer
+{
+    if (self.question)
+    {
+        [self.question answerWithValue:(self.questionAnswerControl.selectedSegmentIndex == 0)];
     }
 }
 
@@ -43,6 +81,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+    [self.questionAnswerControl addTarget:self
+                                   action:@selector(answer)
+                         forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning

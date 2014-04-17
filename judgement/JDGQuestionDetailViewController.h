@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) JDGQuestion *question;
 
-@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel            *questionTextLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *questionAnswerControl;
 
 @end

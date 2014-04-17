@@ -10,13 +10,13 @@
 
 #import "JDGModel.h"
 #import "JDGQuestion.h"
-#import "JDGUser.h"
+#import "JDGValidatedUser.h"
 
 @interface JDGAnswer : JDGModel
 
 @property BOOL value;
 
 @property(weak) JDGQuestion *question;
-@property(weak) JDGUser     *user;
+@property(weak) JDGValidatedUser     *user;
 
 @end
