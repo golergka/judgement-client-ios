@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 golergka. All rights reserved.
 //
 
-#import "JDGDetailViewController.h"
+#import "JDGQuestionDetailViewController.h"
 
-@interface JDGDetailViewController ()
+@interface JDGQuestionDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
 
-@implementation JDGDetailViewController
+@implementation JDGQuestionDetailViewController
 
 #pragma mark - Managing the detail item
 
@@ -34,7 +34,7 @@
     // Update the user interface for the detail item.
 
     if (self.question) {
-        self.detailDescriptionLabel.text = [self.question text];
+        self.questionTextLabel.text = [self.question text];
     }
 }
 

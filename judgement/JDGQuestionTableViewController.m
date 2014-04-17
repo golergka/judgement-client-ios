@@ -7,7 +7,7 @@
 //
 
 #import "JDGQuestionTableViewController.h"
-#import "JDGDetailViewController.h"
+#import "JDGQuestionDetailViewController.h"
 #import "JDGQuestion.h"
 #import "JDGApiClient.h"
 #import "NSDictionary+JDGUrlEncoding.h"
@@ -38,7 +38,7 @@
 
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];
     self.navigationItem.rightBarButtonItem = refreshButton;
-    self.detailViewController = (JDGDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController = (JDGQuestionDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 - (void)didReceiveMemoryWarning

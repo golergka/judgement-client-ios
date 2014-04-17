@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "JDGQuestion.h"
 
-@interface JDGDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface JDGQuestionDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) JDGQuestion *question;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
+
 @end

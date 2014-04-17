@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class JDGDetailViewController;
+@class JDGQuestionDetailViewController;
 
 @interface JDGQuestionTableViewController : UITableViewController
 
-@property (strong, nonatomic) JDGDetailViewController *detailViewController;
+@property (strong, nonatomic) JDGQuestionDetailViewController *detailViewController;
 
 @end
