@@ -39,6 +39,8 @@
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];
     self.navigationItem.rightBarButtonItem = refreshButton;
     self.detailViewController = (JDGQuestionDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning
