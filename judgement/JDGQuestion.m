@@ -25,6 +25,7 @@
         self.text = [json objectForKey:@"text"];
         NSString *dateString = [json objectForKey:@"date"];
         self.date = [[JDGModel jsonDateFormatter] dateFromString:dateString];
+        [self refresh];
     }
     return self;
 }
