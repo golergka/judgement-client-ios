@@ -153,6 +153,7 @@
 		7659928F18F1AAC3002A1EDA /* judgement */ = {
 			isa = PBXGroup;
 			children = (
+				76F7ECB11909BEFA001E5F32 /* Controllers */,
 				76C5243618FB25EA007DC30B /* Client */,
 				76C5243218FB1E9C007DC30B /* Categories */,
 				76C5242E18FB1A71007DC30B /* Model */,
@@ -160,10 +161,6 @@
 				7659929918F1AAC3002A1EDA /* JDGAppDelegate.m */,
 				7659929B18F1AAC3002A1EDA /* Main_iPhone.storyboard */,
 				7659929E18F1AAC3002A1EDA /* Main_iPad.storyboard */,
-				765992A118F1AAC3002A1EDA /* JDGQuestionTableViewController.h */,
-				765992A218F1AAC3002A1EDA /* JDGQuestionTableViewController.m */,
-				765992A418F1AAC3002A1EDA /* JDGQuestionDetailViewController.h */,
-				765992A518F1AAC3002A1EDA /* JDGQuestionDetailViewController.m */,
 				765992A718F1AAC3002A1EDA /* Images.xcassets */,
 				7659929018F1AAC3002A1EDA /* Supporting Files */,
 			);
@@ -242,6 +239,17 @@
 				76C5245C190054C3007DC30B /* JDGAnswerApiRequest.m */,
 			);
 			name = Client;
+			sourceTree = "<group>";
+		};
+		76F7ECB11909BEFA001E5F32 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				765992A118F1AAC3002A1EDA /* JDGQuestionTableViewController.h */,
+				765992A218F1AAC3002A1EDA /* JDGQuestionTableViewController.m */,
+				765992A418F1AAC3002A1EDA /* JDGQuestionDetailViewController.h */,
+				765992A518F1AAC3002A1EDA /* JDGQuestionDetailViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
