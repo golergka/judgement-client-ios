@@ -16,15 +16,15 @@
 {
     JDGAnswer* _myAnswer;
 }
-@synthesize text, date;
+@synthesize text, deadline;
 
 -(id)initWithJson:(NSDictionary *)json
 {
     if (self = [super initWithJson:json])
     {
         self.text = [json objectForKey:@"text"];
-        NSString *dateString = [json objectForKey:@"date"];
-        self.date = [[JDGModel jsonDateFormatter] dateFromString:dateString];
+        NSString *dateString = [json objectForKey:@"deadline"];
+        self.deadline = [[JDGModel jsonDateFormatter] dateFromString:dateString];
         [self refresh];
     }
     return self;
@@ -57,6 +57,11 @@
      }
      failCallback:nil
      ];
+}
+
+-(BOOL)canAnswer
+{
+    return [deadline compare:[NSDate date]] == NSOrderedDescending;
 }
 
 -(JDGAnswer*)myAnswer

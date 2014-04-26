@@ -18,7 +18,7 @@ static NSDateFormatter* jsonDateFormatter;
     if (self == [JDGModel self])
     {
         jsonDateFormatter = [[NSDateFormatter alloc] init];
-        [jsonDateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
+        [jsonDateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
     }
 }
 

@@ -16,11 +16,12 @@
 
 @interface JDGQuestion : JDGModel
 
-@property NSString * text;
-@property NSDate * date;
+@property NSString  * text;
+@property NSDate    * deadline;
 
 @property(readonly) JDGAnswer * myAnswer;
 
 -(void)answerWithValue:(BOOL)value;
+-(BOOL)canAnswer;
 
 @end

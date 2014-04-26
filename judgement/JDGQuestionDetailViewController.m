@@ -9,13 +9,34 @@
 #import "JDGQuestionDetailViewController.h"
 #import "JDGAnswer.h"
 
+static NSDateFormatter * deadlineDateFormatter;
+
 @interface JDGQuestionDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 -(void)configureView;
 -(void)update;
++(NSDateFormatter*)deadlineDateFormatter;
 @end
 
 @implementation JDGQuestionDetailViewController
+
+#pragma mark - Deadline date formatter
+
++(void)initialize
+{
+    if (self == [JDGQuestionDetailViewController self])
+    {
+        deadlineDateFormatter = [[NSDateFormatter alloc] init];
+        [deadlineDateFormatter setTimeStyle:NSDateFormatterNoStyle];
+        [deadlineDateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        [deadlineDateFormatter setDoesRelativeDateFormatting:YES];
+    }
+}
+
++(NSDateFormatter*)deadlineDateFormatter
+{
+    return deadlineDateFormatter;
+}
 
 #pragma mark - Managing the detail item
 
@@ -48,7 +69,12 @@
 {
     // Update the user interface for the detail item.
     if (self.question) {
+        // Texts
         self.questionTextLabel.text = [self.question text];
+        self.questionDeadlineLabel.text = [NSString stringWithFormat:@"Deadline: %@", [deadlineDateFormatter stringFromDate:[self.question deadline]]];
+        // Answerable
+        self.questionAnswerControl.enabled = [self.question canAnswer];
+        // Answer value
         JDGAnswer* myAnswer = self.question.myAnswer;
         if (myAnswer)
         {
