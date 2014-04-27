@@ -98,7 +98,8 @@ static JDGApiClient *sharedClient;
 
 -(NSURL*)urlForParams:(NSDictionary *)params
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8080?%@", [params urlEncodedString]]];
+    NSString *apiServer = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"JDGApiServer"];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", apiServer, [params urlEncodedString]]];
 }
 
 -(void)completeRequest:(id)request
