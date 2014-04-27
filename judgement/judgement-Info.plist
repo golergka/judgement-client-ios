@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>JDGApiServer</key>
-	<string>http://judgement.herokuapp.com</string>
+	<string>http://judgement.herokuapp.com/api</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
