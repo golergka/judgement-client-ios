@@ -18,6 +18,8 @@
 
 @property NSString  * text;
 @property NSDate    * deadline;
+@property BOOL      answered;
+@property BOOL      rightAnswer;
 
 @property(readonly) JDGAnswer * myAnswer;
 

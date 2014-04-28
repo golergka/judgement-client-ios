@@ -25,6 +25,9 @@
         self.text = [json objectForKey:@"text"];
         NSString *dateString = [json objectForKey:@"deadline"];
         self.deadline = [[JDGModel jsonDateFormatter] dateFromString:dateString];
+        self.answered = [[json objectForKey:@"answered"] boolValue];
+        self.rightAnswer = [[json objectForKey:@"rightAnswer"] boolValue];
+        
         [self refresh];
     }
     return self;
