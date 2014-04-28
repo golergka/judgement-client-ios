@@ -58,7 +58,9 @@
      successCallback:^(void) {
          [self refresh];
      }
-     failCallback:nil
+     failCallback:^(void) {
+         [self refresh];
+     }
      ];
 }
 
