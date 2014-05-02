@@ -41,7 +41,10 @@
     for(int i = 0; i < questionsJsonArray.count; i++)
     {
         JDGQuestion *result = [[JDGQuestion alloc] initWithJson:questionsJsonArray[i]];
-        [questionsArray addObject:result];
+        if (result != nil)
+        {
+            [questionsArray addObject:result];
+        }
     }
     _onSuccess(questionsArray);
     [self.apiClient completeRequest:self];

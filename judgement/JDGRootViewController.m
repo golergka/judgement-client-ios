@@ -38,6 +38,8 @@
                                       direction:UIPageViewControllerNavigationDirectionForward
                                        animated:NO
                                      completion:nil];
+    self.pageViewController.view.frame = self.view.frame;
+    
     [self addChildViewController:pageViewController];
     [self.view addSubview:pageViewController.view];
     
@@ -96,7 +98,14 @@
          [pages enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
              JDGQuestionDetailViewController *viewController = (JDGQuestionDetailViewController *)obj;
              NSUInteger index = (NSUInteger) [((NSNumber *) key) integerValue];
-             viewController.question = [questions objectAtIndex:index];
+             if (index < [questions count])
+             {
+                 viewController.question = [questions objectAtIndex:index];
+             }
+             else
+             {
+                 viewController.question = nil;
+             }
          }];
      }
      failCallback:nil];

@@ -31,16 +31,27 @@ static NSDateFormatter* jsonDateFormatter;
 {
     if (self = [super init])
     {
-        @try
+        id idObject;
+        NSString *createdAtString;
+        NSString *updatedAtString;
+        
+        if (json == nil || json == [NSNull null])
+        { goto fail; }
+        
+        idObject = [json objectForKey:@"id"];
+        createdAtString = [json objectForKey:@"createdAt"];
+        updatedAtString = [json objectForKey:@"updatedAt"];
+        
+        if (idObject == nil || createdAtString == nil || updatedAtString == nil)
+        { goto fail; }
+
+        self.uid = [idObject intValue];
+        self.createdAt = [jsonDateFormatter dateFromString:createdAtString];
+        self.updatedAt = [jsonDateFormatter dateFromString:updatedAtString];
+        
+        if(false)
         {
-            self.uid = [[json objectForKey:@"id"] intValue];
-            NSString *createdAtString = [json objectForKey:@"createdAt"];
-            NSString *updatedAtString = [json objectForKey:@"updatedAt"];
-            self.createdAt = [jsonDateFormatter dateFromString:createdAtString];
-            self.updatedAt = [jsonDateFormatter dateFromString:updatedAtString];
-        }
-        @catch(NSException *e)
-        {
+        fail:
             self = nil;
         }
     }

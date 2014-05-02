@@ -22,13 +22,37 @@
 {
     if (self = [super initWithJson:json])
     {
-        self.text = [json objectForKey:@"text"];
-        NSString *dateString = [json objectForKey:@"deadline"];
-        self.deadline = [[JDGModel jsonDateFormatter] dateFromString:dateString];
-        self.answered = [[json objectForKey:@"answered"] boolValue];
-        self.rightAnswer = [[json objectForKey:@"rightAnswer"] boolValue];
+        NSString    *textString;
+        NSString    *dateString;
+        id          answeredObject;
+        id          rightAnswerObject;
+        
+        if (json == nil)
+        { goto fail; }
+        
+        textString          = [json objectForKey:@"text"];
+        dateString          = [json objectForKey:@"deadline"];
+        answeredObject      = [json objectForKey:@"answered"];
+        rightAnswerObject   = [json objectForKey:@"rightAnswer"];
+        
+        if (textString          == nil ||
+            dateString          == nil ||
+            answeredObject      == nil ||
+            rightAnswerObject   == nil)
+        { goto fail; }
+        
+        self.text           = textString;
+        self.deadline       = [[JDGModel jsonDateFormatter] dateFromString:dateString];
+        self.answered       = [answeredObject boolValue];
+        self.rightAnswer    = [rightAnswerObject boolValue];
         
         [self refresh];
+        
+        if(false)
+        {
+        fail:
+            self = nil;
+        }
     }
     return self;
 }
