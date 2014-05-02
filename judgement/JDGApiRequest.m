@@ -47,15 +47,15 @@
 {
     NSError *e;
     NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:_responseData options:NSJSONReadingMutableContainers error:&e];
-#if DEBUG
-    NSLog(@"Response: %@", responseJson);
-#endif
+//#if DEBUG
+//    NSLog(@"Response: %@", responseJson);
+//#endif
     NSString *error = [responseJson objectForKey:@"error"];
     if (error != NULL)
     {
-#if DEBUG
-        NSLog(@"Error: %@", error);
-#endif
+//#if DEBUG
+//        NSLog(@"Error: %@", error);
+//#endif
         if (onFail)
             self.onFail();
         [_apiClient completeRequest:self];

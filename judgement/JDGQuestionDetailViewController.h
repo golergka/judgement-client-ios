@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "JDGQuestion.h"
+#import "JDGPageContentViewController.h"
 
-@interface JDGQuestionDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface JDGQuestionDetailViewController : JDGPageContentViewController
 
 @property (strong, nonatomic) JDGQuestion *question;
 
 @property (weak, nonatomic) IBOutlet UILabel            *questionTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel            *questionDeadlineLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *questionAnswerControl;
+
+@property (weak, nonatomic) IBOutlet UIView             *loadingView;
+@property (weak, nonatomic) IBOutlet UIView             *questionView;
 
 @end

@@ -24,6 +24,8 @@
 		765992B918F1AAC3002A1EDA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 765992B718F1AAC3002A1EDA /* InfoPlist.strings */; };
 		765992BB18F1AAC3002A1EDA /* judgementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 765992BA18F1AAC3002A1EDA /* judgementTests.m */; };
 		765992C618F1BBD7002A1EDA /* JDGQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 765992C518F1BBD7002A1EDA /* JDGQuestion.m */; };
+		769CE9C41913A20600F7E93F /* JDGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C31913A20600F7E93F /* JDGRootViewController.m */; };
+		769CE9C71913A4C400F7E93F /* JDGPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C61913A4C400F7E93F /* JDGPageContentViewController.m */; };
 		76C5243518FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243418FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m */; };
 		76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243818FB2613007DC30B /* JDGApiClient.m */; };
 		76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243E18FB323F007DC30B /* JDGApiRequest.m */; };
@@ -72,6 +74,10 @@
 		765992BA18F1AAC3002A1EDA /* judgementTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = judgementTests.m; sourceTree = "<group>"; };
 		765992C418F1BBD7002A1EDA /* JDGQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGQuestion.h; sourceTree = "<group>"; };
 		765992C518F1BBD7002A1EDA /* JDGQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGQuestion.m; sourceTree = "<group>"; };
+		769CE9C21913A20600F7E93F /* JDGRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGRootViewController.h; sourceTree = "<group>"; };
+		769CE9C31913A20600F7E93F /* JDGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGRootViewController.m; sourceTree = "<group>"; };
+		769CE9C51913A4C400F7E93F /* JDGPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGPageContentViewController.h; sourceTree = "<group>"; };
+		769CE9C61913A4C400F7E93F /* JDGPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGPageContentViewController.m; sourceTree = "<group>"; };
 		76C5243318FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JDGUrlEncoding.h"; sourceTree = "<group>"; };
 		76C5243418FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JDGUrlEncoding.m"; sourceTree = "<group>"; };
 		76C5243718FB2613007DC30B /* JDGApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGApiClient.h; sourceTree = "<group>"; };
@@ -248,6 +254,10 @@
 				765992A218F1AAC3002A1EDA /* JDGQuestionTableViewController.m */,
 				765992A418F1AAC3002A1EDA /* JDGQuestionDetailViewController.h */,
 				765992A518F1AAC3002A1EDA /* JDGQuestionDetailViewController.m */,
+				769CE9C21913A20600F7E93F /* JDGRootViewController.h */,
+				769CE9C31913A20600F7E93F /* JDGRootViewController.m */,
+				769CE9C51913A4C400F7E93F /* JDGPageContentViewController.h */,
+				769CE9C61913A4C400F7E93F /* JDGPageContentViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -361,10 +371,12 @@
 				765992A618F1AAC3002A1EDA /* JDGQuestionDetailViewController.m in Sources */,
 				76C5246019005964007DC30B /* JDGUser.m in Sources */,
 				76C5244518FC5289007DC30B /* JDGRegisterApiRequest.m in Sources */,
+				769CE9C41913A20600F7E93F /* JDGRootViewController.m in Sources */,
 				76C5245A18FF0DAB007DC30B /* JDGValidatedUser.m in Sources */,
 				76C5245718FF067B007DC30B /* JDGModel.m in Sources */,
 				76C5245118FF009B007DC30B /* JDGGetAnswerApiRequest.m in Sources */,
 				76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */,
+				769CE9C71913A4C400F7E93F /* JDGPageContentViewController.m in Sources */,
 				76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */,
 				76C5245418FF0463007DC30B /* JDGAnswer.m in Sources */,
 			);

@@ -92,6 +92,9 @@ static NSDateFormatter * deadlineDateFormatter;
             self.questionAnswerControl.selectedSegmentIndex = -1;
         }
     }
+    
+    [self.loadingView setHidden:(self.question != nil)];
+    [self.questionView setHidden:(self.question == nil)];
 }
 
 -(void)answer
