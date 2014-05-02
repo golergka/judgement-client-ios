@@ -15,7 +15,6 @@
 		7659929A18F1AAC3002A1EDA /* JDGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7659929918F1AAC3002A1EDA /* JDGAppDelegate.m */; };
 		7659929D18F1AAC3002A1EDA /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7659929B18F1AAC3002A1EDA /* Main_iPhone.storyboard */; };
 		765992A018F1AAC3002A1EDA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7659929E18F1AAC3002A1EDA /* Main_iPad.storyboard */; };
-		765992A318F1AAC3002A1EDA /* JDGQuestionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765992A218F1AAC3002A1EDA /* JDGQuestionTableViewController.m */; };
 		765992A618F1AAC3002A1EDA /* JDGQuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765992A518F1AAC3002A1EDA /* JDGQuestionDetailViewController.m */; };
 		765992A818F1AAC3002A1EDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765992A718F1AAC3002A1EDA /* Images.xcassets */; };
 		765992AF18F1AAC3002A1EDA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765992AE18F1AAC3002A1EDA /* XCTest.framework */; };
@@ -62,8 +61,6 @@
 		7659929918F1AAC3002A1EDA /* JDGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDGAppDelegate.m; sourceTree = "<group>"; };
 		7659929C18F1AAC3002A1EDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		7659929F18F1AAC3002A1EDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		765992A118F1AAC3002A1EDA /* JDGQuestionTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDGQuestionTableViewController.h; sourceTree = "<group>"; };
-		765992A218F1AAC3002A1EDA /* JDGQuestionTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDGQuestionTableViewController.m; sourceTree = "<group>"; };
 		765992A418F1AAC3002A1EDA /* JDGQuestionDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDGQuestionDetailViewController.h; sourceTree = "<group>"; };
 		765992A518F1AAC3002A1EDA /* JDGQuestionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDGQuestionDetailViewController.m; sourceTree = "<group>"; };
 		765992A718F1AAC3002A1EDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -250,8 +247,6 @@
 		76F7ECB11909BEFA001E5F32 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				765992A118F1AAC3002A1EDA /* JDGQuestionTableViewController.h */,
-				765992A218F1AAC3002A1EDA /* JDGQuestionTableViewController.m */,
 				765992A418F1AAC3002A1EDA /* JDGQuestionDetailViewController.h */,
 				765992A518F1AAC3002A1EDA /* JDGQuestionDetailViewController.m */,
 				769CE9C21913A20600F7E93F /* JDGRootViewController.h */,
@@ -365,7 +360,6 @@
 				7659929A18F1AAC3002A1EDA /* JDGAppDelegate.m in Sources */,
 				76C5243518FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m in Sources */,
 				765992C618F1BBD7002A1EDA /* JDGQuestion.m in Sources */,
-				765992A318F1AAC3002A1EDA /* JDGQuestionTableViewController.m in Sources */,
 				7659929618F1AAC3002A1EDA /* main.m in Sources */,
 				76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */,
 				765992A618F1AAC3002A1EDA /* JDGQuestionDetailViewController.m in Sources */,
