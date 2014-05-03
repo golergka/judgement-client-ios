@@ -31,6 +31,7 @@
 		769CE9D819153D7800F7E93F /* JDGQuestionPageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9D719153D7800F7E93F /* JDGQuestionPageFactory.m */; };
 		769CE9DB191544D400F7E93F /* JDGPageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9DA191544D400F7E93F /* JDGPageFactory.m */; };
 		769CE9DE1915527000F7E93F /* JDGLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9DD1915527000F7E93F /* JDGLoadingViewController.m */; };
+		769CE9E119156BDA00F7E93F /* JDGFacebookLoginPageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9E019156BDA00F7E93F /* JDGFacebookLoginPageFactory.m */; };
 		76C5243518FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243418FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m */; };
 		76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243818FB2613007DC30B /* JDGApiClient.m */; };
 		76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243E18FB323F007DC30B /* JDGApiRequest.m */; };
@@ -92,6 +93,8 @@
 		769CE9DA191544D400F7E93F /* JDGPageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGPageFactory.m; sourceTree = "<group>"; };
 		769CE9DC1915527000F7E93F /* JDGLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGLoadingViewController.h; sourceTree = "<group>"; };
 		769CE9DD1915527000F7E93F /* JDGLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGLoadingViewController.m; sourceTree = "<group>"; };
+		769CE9DF19156BDA00F7E93F /* JDGFacebookLoginPageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGFacebookLoginPageFactory.h; sourceTree = "<group>"; };
+		769CE9E019156BDA00F7E93F /* JDGFacebookLoginPageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGFacebookLoginPageFactory.m; sourceTree = "<group>"; };
 		76C5243318FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JDGUrlEncoding.h"; sourceTree = "<group>"; };
 		76C5243418FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JDGUrlEncoding.m"; sourceTree = "<group>"; };
 		76C5243718FB2613007DC30B /* JDGApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGApiClient.h; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 				769CE9D719153D7800F7E93F /* JDGQuestionPageFactory.m */,
 				769CE9D9191544D400F7E93F /* JDGPageFactory.h */,
 				769CE9DA191544D400F7E93F /* JDGPageFactory.m */,
+				769CE9DF19156BDA00F7E93F /* JDGFacebookLoginPageFactory.h */,
+				769CE9E019156BDA00F7E93F /* JDGFacebookLoginPageFactory.m */,
 			);
 			name = PageFactories;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				769CE9CD19151B9700F7E93F /* JDGAddQuestionApiRequest.m in Sources */,
 				76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */,
 				769CE9C71913A4C400F7E93F /* JDGPageViewController.m in Sources */,
+				769CE9E119156BDA00F7E93F /* JDGFacebookLoginPageFactory.m in Sources */,
 				76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */,
 				76C5245418FF0463007DC30B /* JDGAnswer.m in Sources */,
 			);

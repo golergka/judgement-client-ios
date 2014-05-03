@@ -12,6 +12,7 @@
 #import "JDGQuestionPageViewController.h"
 #import "JDGPageFactory.h"
 #import "JDGQuestionPageFactory.h"
+#import "JDGFacebookLoginPageFactory.h"
 
 static JDGRootViewController *sharedController;
 
@@ -156,11 +157,12 @@ static JDGRootViewController *sharedController;
     [[JDGApiClient sharedClient]
      getQuestionsWithSuccessCallback:^(NSArray* newQuestions) {
          self.questions = newQuestions;
-         NSMutableArray *pageFactories = [[NSMutableArray alloc] initWithCapacity:newQuestions.count];
+         NSMutableArray *newPageFactories = [[NSMutableArray alloc] initWithCapacity:(newQuestions.count + 1)];
          for (JDGQuestion *question in newQuestions) {
-             [pageFactories addObject:[[JDGQuestionPageFactory alloc] initWithQuestion:question]];
+             [newPageFactories addObject:[[JDGQuestionPageFactory alloc] initWithQuestion:question]];
          }
-         [self addPageFactories:pageFactories];
+         [newPageFactories addObject:[[JDGFacebookLoginPageFactory alloc] init]];
+         [self addPageFactories:newPageFactories];
      }
      failCallback:nil];
 }
