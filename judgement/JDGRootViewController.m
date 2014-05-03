@@ -10,37 +10,37 @@
 #import "JDGPageViewController.h"
 #import "JDGApiClient.h"
 #import "JDGQuestionPageViewController.h"
+#import "JDGPageFactory.h"
+#import "JDGQuestionPageFactory.h"
 
 @interface JDGRootViewController ()
 
 @property (strong, atomic)  NSMutableDictionary *pages;
+@property (strong, atomic)  NSMutableArray      *pageFactories;
 @property                   NSArray             *questions;
 @property                   NSUInteger          currentPageIndex;
 @property                   NSUInteger          expectingPageIndex;
 
 -(void)refresh;
 -(JDGPageViewController *)pageAtIndex:(NSUInteger)index;
+-(void)updatePageController;
 
 @end
 
 @implementation JDGRootViewController
-@synthesize pages, pageViewController, questions, buttonView, currentPageIndex;
+@synthesize pages, pageViewController, questions, buttonView, currentPageIndex, pageFactories;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.pages = [[NSMutableDictionary alloc] init];
+    self.pageFactories = [[NSMutableArray alloc] init];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"QuestionPageViewController"];
     self.pageViewController.dataSource = self;
-    
-    JDGPageViewController *startViewController = [self pageAtIndex:0];
     self.currentPageIndex = 0;
-    [self.pageViewController setViewControllers:@[startViewController]
-                                      direction:UIPageViewControllerNavigationDirectionForward
-                                       animated:NO
-                                     completion:nil];
+    [self updatePageController];
     self.pageViewController.view.frame = self.view.frame;
     self.pageViewController.delegate = self;
     [self addChildViewController:pageViewController];
@@ -52,7 +52,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self updatePageController];
 }
 
 #pragma mark UIPageViewControllerDataSource
@@ -72,21 +72,66 @@
     return [self pageAtIndex:index];
 }
 
+#pragma mark Public methods
+
+-(void)addPageFactories:(NSArray *)factories
+{
+    NSUInteger oldFactoriesCount = pageFactories.count;
+    
+    for (JDGPageFactory *newFactory in factories)
+    {
+        // TODO: fix n^2 check
+        BOOL duplicate = false;
+        for(JDGPageFactory *existingFactory in pageFactories)
+        {
+            if ([existingFactory tryUpdateWithFactory:newFactory])
+            {
+                duplicate = true;
+                break;
+            }
+        }
+        if (!duplicate)
+        {
+            [pageFactories addObject:newFactory];
+        }
+    }
+    
+    if (factories.count != oldFactoriesCount && ABS(oldFactoriesCount - currentPageIndex) < 2)
+    {
+        [self updatePageController];
+    }
+}
+
 #pragma mark Service methods
+
+-(void)updatePageController
+{
+    JDGPageViewController *controller = [self pageAtIndex:currentPageIndex];
+    if (controller == nil)
+    {
+        controller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoadingViewController"];
+    }
+    controller.pageIndex = currentPageIndex;
+    [self.pageViewController setViewControllers:@[controller]
+                                      direction:UIPageViewControllerNavigationDirectionForward
+                                       animated:NO
+                                     completion:nil];
+}
 
 - (JDGPageViewController*)pageAtIndex:(NSUInteger)index
 {
-    JDGQuestionPageViewController *result = (JDGQuestionPageViewController *)[pages objectForKey:[NSNumber numberWithUnsignedInteger:index]];
+    JDGPageViewController *result = (JDGPageViewController *)[pages objectForKey:[NSNumber numberWithUnsignedInteger:index]];
     
     if (result == nil)
-    {
-        JDGQuestion *question;
-        
-        if (((questions != nil && index  < [questions count] && (question = [questions objectAtIndex:index]) != nil ) || index == 0))
+    {   
+        if (pageFactories != nil && index  < [pageFactories count])
         {
-            result = [self.storyboard instantiateViewControllerWithIdentifier:@"QuestionDetailViewController"];
-            result.question = question;
-            result.pageIndex = index;
+            JDGPageFactory *resultFactory = [pageFactories objectAtIndex:index];
+            if (resultFactory != nil)
+            {
+                result = [resultFactory createPage];
+                result.pageIndex = index;
+            }
         }
         if (result != nil)
         {
@@ -101,18 +146,11 @@
     [[JDGApiClient sharedClient]
      getQuestionsWithSuccessCallback:^(NSArray* newQuestions) {
          self.questions = newQuestions;
-         [pages enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-             JDGQuestionPageViewController *viewController = (JDGQuestionPageViewController *)obj;
-             NSUInteger index = (NSUInteger) [((NSNumber *) key) integerValue];
-             if (index < [questions count])
-             {
-                 viewController.question = [questions objectAtIndex:index];
-             }
-             else
-             {
-                 viewController.question = nil;
-             }
-         }];
+         NSMutableArray *pageFactories = [[NSMutableArray alloc] initWithCapacity:newQuestions.count];
+         for (JDGQuestion *question in newQuestions) {
+             [pageFactories addObject:[[JDGQuestionPageFactory alloc] initWithQuestion:question]];
+         }
+         [self addPageFactories:pageFactories];
      }
      failCallback:nil];
 }

@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="-54" y="7"/>
         </scene>
-        <!--Question Page View Controller - Detail-->
+        <!--Question-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController storyboardIdentifier="QuestionDetailViewController" title="Detail" id="Ah7-4n-0Wa" customClass="JDGQuestionPageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionDetailViewController" title="Detail" id="Ah7-4n-0Wa" userLabel="Question" customClass="JDGQuestionPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cIm-e0-J51"/>
                         <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
@@ -143,6 +143,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="312" y="7"/>
+        </scene>
+        <!--Loading-->
+        <scene sceneID="dAp-jF-Swd">
+            <objects>
+                <viewController storyboardIdentifier="LoadingViewController" id="vzp-fh-J0f" userLabel="Loading" customClass="JDGLoadingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5NS-um-RCq"/>
+                        <viewControllerLayoutGuide type="bottom" id="MkL-b0-OFQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k9k-8R-4uA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Alw-0z-QGq">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Alw-0z-QGq" firstAttribute="centerY" secondItem="k9k-8R-4uA" secondAttribute="centerY" id="BVC-m1-zu3"/>
+                            <constraint firstItem="Alw-0z-QGq" firstAttribute="centerX" secondItem="k9k-8R-4uA" secondAttribute="centerX" id="lm8-Sf-bh2"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EhU-jN-WHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="674" y="7"/>
         </scene>
         <!--Add Question View Controller-->
         <scene sceneID="out-fk-UaZ">

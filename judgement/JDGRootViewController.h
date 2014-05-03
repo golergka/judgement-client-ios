@@ -13,4 +13,6 @@
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet UIButton *buttonView;
 
+-(void)addPageFactories:(NSArray *)factories;
+
 @end

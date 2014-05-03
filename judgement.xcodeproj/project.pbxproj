@@ -28,6 +28,9 @@
 		769CE9CA1913E42300F7E93F /* JDGAddQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C91913E42300F7E93F /* JDGAddQuestionViewController.m */; };
 		769CE9CD19151B9700F7E93F /* JDGAddQuestionApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9CC19151B9700F7E93F /* JDGAddQuestionApiRequest.m */; };
 		769CE9CF19152EAF00F7E93F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769CE9CE19152EAF00F7E93F /* FacebookSDK.framework */; };
+		769CE9D819153D7800F7E93F /* JDGQuestionPageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9D719153D7800F7E93F /* JDGQuestionPageFactory.m */; };
+		769CE9DB191544D400F7E93F /* JDGPageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9DA191544D400F7E93F /* JDGPageFactory.m */; };
+		769CE9DE1915527000F7E93F /* JDGLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9DD1915527000F7E93F /* JDGLoadingViewController.m */; };
 		76C5243518FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243418FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m */; };
 		76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243818FB2613007DC30B /* JDGApiClient.m */; };
 		76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243E18FB323F007DC30B /* JDGApiRequest.m */; };
@@ -83,6 +86,12 @@
 		769CE9CB19151B9700F7E93F /* JDGAddQuestionApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGAddQuestionApiRequest.h; sourceTree = "<group>"; };
 		769CE9CC19151B9700F7E93F /* JDGAddQuestionApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGAddQuestionApiRequest.m; sourceTree = "<group>"; };
 		769CE9CE19152EAF00F7E93F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		769CE9D619153D7800F7E93F /* JDGQuestionPageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGQuestionPageFactory.h; sourceTree = "<group>"; };
+		769CE9D719153D7800F7E93F /* JDGQuestionPageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGQuestionPageFactory.m; sourceTree = "<group>"; };
+		769CE9D9191544D400F7E93F /* JDGPageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGPageFactory.h; sourceTree = "<group>"; };
+		769CE9DA191544D400F7E93F /* JDGPageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGPageFactory.m; sourceTree = "<group>"; };
+		769CE9DC1915527000F7E93F /* JDGLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGLoadingViewController.h; sourceTree = "<group>"; };
+		769CE9DD1915527000F7E93F /* JDGLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGLoadingViewController.m; sourceTree = "<group>"; };
 		76C5243318FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JDGUrlEncoding.h"; sourceTree = "<group>"; };
 		76C5243418FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JDGUrlEncoding.m"; sourceTree = "<group>"; };
 		76C5243718FB2613007DC30B /* JDGApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGApiClient.h; sourceTree = "<group>"; };
@@ -212,12 +221,25 @@
 		769CE9D019153BE200F7E93F /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				769CE9DC1915527000F7E93F /* JDGLoadingViewController.h */,
+				769CE9DD1915527000F7E93F /* JDGLoadingViewController.m */,
 				765992A418F1AAC3002A1EDA /* JDGQuestionPageViewController.h */,
 				765992A518F1AAC3002A1EDA /* JDGQuestionPageViewController.m */,
 				769CE9C51913A4C400F7E93F /* JDGPageViewController.h */,
 				769CE9C61913A4C400F7E93F /* JDGPageViewController.m */,
 			);
 			name = Pages;
+			sourceTree = "<group>";
+		};
+		769CE9D119153CD000F7E93F /* PageFactories */ = {
+			isa = PBXGroup;
+			children = (
+				769CE9D619153D7800F7E93F /* JDGQuestionPageFactory.h */,
+				769CE9D719153D7800F7E93F /* JDGQuestionPageFactory.m */,
+				769CE9D9191544D400F7E93F /* JDGPageFactory.h */,
+				769CE9DA191544D400F7E93F /* JDGPageFactory.m */,
+			);
+			name = PageFactories;
 			sourceTree = "<group>";
 		};
 		76C5242E18FB1A71007DC30B /* Model */ = {
@@ -270,6 +292,7 @@
 		76F7ECB11909BEFA001E5F32 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				769CE9D119153CD000F7E93F /* PageFactories */,
 				769CE9D019153BE200F7E93F /* Pages */,
 				769CE9C21913A20600F7E93F /* JDGRootViewController.h */,
 				769CE9C31913A20600F7E93F /* JDGRootViewController.m */,
@@ -387,10 +410,13 @@
 				76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */,
 				765992A618F1AAC3002A1EDA /* JDGQuestionPageViewController.m in Sources */,
 				76C5246019005964007DC30B /* JDGUser.m in Sources */,
+				769CE9DE1915527000F7E93F /* JDGLoadingViewController.m in Sources */,
 				76C5244518FC5289007DC30B /* JDGRegisterApiRequest.m in Sources */,
 				769CE9C41913A20600F7E93F /* JDGRootViewController.m in Sources */,
+				769CE9DB191544D400F7E93F /* JDGPageFactory.m in Sources */,
 				76C5245A18FF0DAB007DC30B /* JDGValidatedUser.m in Sources */,
 				76C5245718FF067B007DC30B /* JDGModel.m in Sources */,
+				769CE9D819153D7800F7E93F /* JDGQuestionPageFactory.m in Sources */,
 				76C5245118FF009B007DC30B /* JDGGetAnswerApiRequest.m in Sources */,
 				769CE9CD19151B9700F7E93F /* JDGAddQuestionApiRequest.m in Sources */,
 				76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */,
