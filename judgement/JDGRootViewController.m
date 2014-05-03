@@ -7,9 +7,9 @@
 //
 
 #import "JDGRootViewController.h"
-#import "JDGPageContentViewController.h"
+#import "JDGPageViewController.h"
 #import "JDGApiClient.h"
-#import "JDGQuestionDetailViewController.h"
+#import "JDGQuestionPageViewController.h"
 
 @interface JDGRootViewController ()
 
@@ -19,7 +19,7 @@
 @property                   NSUInteger          expectingPageIndex;
 
 -(void)refresh;
--(JDGPageContentViewController *)pageAtIndex:(NSUInteger)index;
+-(JDGPageViewController *)pageAtIndex:(NSUInteger)index;
 
 @end
 
@@ -35,7 +35,7 @@
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"QuestionPageViewController"];
     self.pageViewController.dataSource = self;
     
-    JDGPageContentViewController *startViewController = [self pageAtIndex:0];
+    JDGPageViewController *startViewController = [self pageAtIndex:0];
     self.currentPageIndex = 0;
     [self.pageViewController setViewControllers:@[startViewController]
                                       direction:UIPageViewControllerNavigationDirectionForward
@@ -60,23 +60,23 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((JDGPageContentViewController *) viewController).pageIndex;
+    NSUInteger index = ((JDGPageViewController *) viewController).pageIndex;
     index--;
     return [self pageAtIndex:index];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((JDGPageContentViewController *) viewController).pageIndex;
+    NSUInteger index = ((JDGPageViewController *) viewController).pageIndex;
     index++;
     return [self pageAtIndex:index];
 }
 
 #pragma mark Service methods
 
-- (JDGPageContentViewController*)pageAtIndex:(NSUInteger)index
+- (JDGPageViewController*)pageAtIndex:(NSUInteger)index
 {
-    JDGQuestionDetailViewController *result = (JDGQuestionDetailViewController *)[pages objectForKey:[NSNumber numberWithUnsignedInteger:index]];
+    JDGQuestionPageViewController *result = (JDGQuestionPageViewController *)[pages objectForKey:[NSNumber numberWithUnsignedInteger:index]];
     
     if (result == nil)
     {
@@ -102,7 +102,7 @@
      getQuestionsWithSuccessCallback:^(NSArray* newQuestions) {
          self.questions = newQuestions;
          [pages enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-             JDGQuestionDetailViewController *viewController = (JDGQuestionDetailViewController *)obj;
+             JDGQuestionPageViewController *viewController = (JDGQuestionPageViewController *)obj;
              NSUInteger index = (NSUInteger) [((NSNumber *) key) integerValue];
              if (index < [questions count])
              {
@@ -123,9 +123,9 @@
 willTransitionToViewControllers:(NSArray *)pendingViewControllers
 {
     id nextViewController = [pendingViewControllers firstObject];
-    if ([nextViewController isKindOfClass:[JDGPageContentViewController class]])
+    if ([nextViewController isKindOfClass:[JDGPageViewController class]])
     {
-        JDGPageContentViewController *nextPage = (JDGPageContentViewController *)nextViewController;
+        JDGPageViewController *nextPage = (JDGPageViewController *)nextViewController;
         self.expectingPageIndex = nextPage.pageIndex;
     }
 }

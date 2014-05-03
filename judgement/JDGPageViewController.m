@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 golergka. All rights reserved.
 //
 
-#import "JDGPageContentViewController.h"
+#import "JDGPageViewController.h"
 
-@interface JDGPageContentViewController ()
+@interface JDGPageViewController ()
 
 @end
 
-@implementation JDGPageContentViewController
+@implementation JDGPageViewController
 @synthesize pageIndex;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "JDGQuestion.h"
-#import "JDGPageContentViewController.h"
+#import "JDGPageViewController.h"
 
-@interface JDGQuestionDetailViewController : JDGPageContentViewController
+@interface JDGQuestionPageViewController : JDGPageViewController
 
 @property (strong, nonatomic) JDGQuestion *question;
 

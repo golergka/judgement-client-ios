@@ -15,7 +15,7 @@
 		7659929A18F1AAC3002A1EDA /* JDGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7659929918F1AAC3002A1EDA /* JDGAppDelegate.m */; };
 		7659929D18F1AAC3002A1EDA /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7659929B18F1AAC3002A1EDA /* Main_iPhone.storyboard */; };
 		765992A018F1AAC3002A1EDA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7659929E18F1AAC3002A1EDA /* Main_iPad.storyboard */; };
-		765992A618F1AAC3002A1EDA /* JDGQuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765992A518F1AAC3002A1EDA /* JDGQuestionDetailViewController.m */; };
+		765992A618F1AAC3002A1EDA /* JDGQuestionPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765992A518F1AAC3002A1EDA /* JDGQuestionPageViewController.m */; };
 		765992A818F1AAC3002A1EDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765992A718F1AAC3002A1EDA /* Images.xcassets */; };
 		765992AF18F1AAC3002A1EDA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765992AE18F1AAC3002A1EDA /* XCTest.framework */; };
 		765992B018F1AAC3002A1EDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7659928918F1AAC3002A1EDA /* Foundation.framework */; };
@@ -24,7 +24,7 @@
 		765992BB18F1AAC3002A1EDA /* judgementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 765992BA18F1AAC3002A1EDA /* judgementTests.m */; };
 		765992C618F1BBD7002A1EDA /* JDGQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 765992C518F1BBD7002A1EDA /* JDGQuestion.m */; };
 		769CE9C41913A20600F7E93F /* JDGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C31913A20600F7E93F /* JDGRootViewController.m */; };
-		769CE9C71913A4C400F7E93F /* JDGPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C61913A4C400F7E93F /* JDGPageContentViewController.m */; };
+		769CE9C71913A4C400F7E93F /* JDGPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C61913A4C400F7E93F /* JDGPageViewController.m */; };
 		769CE9CA1913E42300F7E93F /* JDGAddQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C91913E42300F7E93F /* JDGAddQuestionViewController.m */; };
 		769CE9CD19151B9700F7E93F /* JDGAddQuestionApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9CC19151B9700F7E93F /* JDGAddQuestionApiRequest.m */; };
 		769CE9CF19152EAF00F7E93F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769CE9CE19152EAF00F7E93F /* FacebookSDK.framework */; };
@@ -64,8 +64,8 @@
 		7659929918F1AAC3002A1EDA /* JDGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDGAppDelegate.m; sourceTree = "<group>"; };
 		7659929C18F1AAC3002A1EDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		7659929F18F1AAC3002A1EDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		765992A418F1AAC3002A1EDA /* JDGQuestionDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDGQuestionDetailViewController.h; sourceTree = "<group>"; };
-		765992A518F1AAC3002A1EDA /* JDGQuestionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDGQuestionDetailViewController.m; sourceTree = "<group>"; };
+		765992A418F1AAC3002A1EDA /* JDGQuestionPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDGQuestionPageViewController.h; sourceTree = "<group>"; };
+		765992A518F1AAC3002A1EDA /* JDGQuestionPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDGQuestionPageViewController.m; sourceTree = "<group>"; };
 		765992A718F1AAC3002A1EDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		765992AD18F1AAC3002A1EDA /* judgementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = judgementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		765992AE18F1AAC3002A1EDA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -76,8 +76,8 @@
 		765992C518F1BBD7002A1EDA /* JDGQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGQuestion.m; sourceTree = "<group>"; };
 		769CE9C21913A20600F7E93F /* JDGRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGRootViewController.h; sourceTree = "<group>"; };
 		769CE9C31913A20600F7E93F /* JDGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGRootViewController.m; sourceTree = "<group>"; };
-		769CE9C51913A4C400F7E93F /* JDGPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGPageContentViewController.h; sourceTree = "<group>"; };
-		769CE9C61913A4C400F7E93F /* JDGPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGPageContentViewController.m; sourceTree = "<group>"; };
+		769CE9C51913A4C400F7E93F /* JDGPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGPageViewController.h; sourceTree = "<group>"; };
+		769CE9C61913A4C400F7E93F /* JDGPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGPageViewController.m; sourceTree = "<group>"; };
 		769CE9C81913E42300F7E93F /* JDGAddQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGAddQuestionViewController.h; sourceTree = "<group>"; };
 		769CE9C91913E42300F7E93F /* JDGAddQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGAddQuestionViewController.m; sourceTree = "<group>"; };
 		769CE9CB19151B9700F7E93F /* JDGAddQuestionApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGAddQuestionApiRequest.h; sourceTree = "<group>"; };
@@ -212,10 +212,10 @@
 		769CE9D019153BE200F7E93F /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				765992A418F1AAC3002A1EDA /* JDGQuestionDetailViewController.h */,
-				765992A518F1AAC3002A1EDA /* JDGQuestionDetailViewController.m */,
-				769CE9C51913A4C400F7E93F /* JDGPageContentViewController.h */,
-				769CE9C61913A4C400F7E93F /* JDGPageContentViewController.m */,
+				765992A418F1AAC3002A1EDA /* JDGQuestionPageViewController.h */,
+				765992A518F1AAC3002A1EDA /* JDGQuestionPageViewController.m */,
+				769CE9C51913A4C400F7E93F /* JDGPageViewController.h */,
+				769CE9C61913A4C400F7E93F /* JDGPageViewController.m */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 				769CE9CA1913E42300F7E93F /* JDGAddQuestionViewController.m in Sources */,
 				7659929618F1AAC3002A1EDA /* main.m in Sources */,
 				76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */,
-				765992A618F1AAC3002A1EDA /* JDGQuestionDetailViewController.m in Sources */,
+				765992A618F1AAC3002A1EDA /* JDGQuestionPageViewController.m in Sources */,
 				76C5246019005964007DC30B /* JDGUser.m in Sources */,
 				76C5244518FC5289007DC30B /* JDGRegisterApiRequest.m in Sources */,
 				769CE9C41913A20600F7E93F /* JDGRootViewController.m in Sources */,
@@ -394,7 +394,7 @@
 				76C5245118FF009B007DC30B /* JDGGetAnswerApiRequest.m in Sources */,
 				769CE9CD19151B9700F7E93F /* JDGAddQuestionApiRequest.m in Sources */,
 				76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */,
-				769CE9C71913A4C400F7E93F /* JDGPageContentViewController.m in Sources */,
+				769CE9C71913A4C400F7E93F /* JDGPageViewController.m in Sources */,
 				76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */,
 				76C5245418FF0463007DC30B /* JDGAnswer.m in Sources */,
 			);

@@ -6,25 +6,25 @@
 //  Copyright (c) 2014 golergka. All rights reserved.
 //
 
-#import "JDGQuestionDetailViewController.h"
+#import "JDGQuestionPageViewController.h"
 #import "JDGAnswer.h"
 
 static NSDateFormatter * deadlineDateFormatter;
 
-@interface JDGQuestionDetailViewController ()
+@interface JDGQuestionPageViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 -(void)configureView;
 -(void)update;
 +(NSDateFormatter*)deadlineDateFormatter;
 @end
 
-@implementation JDGQuestionDetailViewController
+@implementation JDGQuestionPageViewController
 
 #pragma mark - Deadline date formatter
 
 +(void)initialize
 {
-    if (self == [JDGQuestionDetailViewController self])
+    if (self == [JDGQuestionPageViewController self])
     {
         deadlineDateFormatter = [[NSDateFormatter alloc] init];
         [deadlineDateFormatter setTimeStyle:NSDateFormatterNoStyle];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JDGPageContentViewController : UIViewController
+@interface JDGPageViewController : UIViewController
 
 @property NSUInteger pageIndex;
 

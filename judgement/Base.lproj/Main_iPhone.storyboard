@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="-54" y="7"/>
         </scene>
-        <!--Question Detail View Controller - Detail-->
+        <!--Question Page View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController storyboardIdentifier="QuestionDetailViewController" title="Detail" id="Ah7-4n-0Wa" customClass="JDGQuestionDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionDetailViewController" title="Detail" id="Ah7-4n-0Wa" customClass="JDGQuestionPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cIm-e0-J51"/>
                         <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
@@ -147,7 +147,6 @@
         <!--Add Question View Controller-->
         <scene sceneID="out-fk-UaZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yfI-Lf-6nX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AddQuestion" automaticallyAdjustsScrollViewInsets="NO" id="8Kr-LC-uMf" customClass="JDGAddQuestionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fbf-pe-Zft"/>
@@ -168,7 +167,7 @@
                                             <!--2014-05-03 11:44:47 +0000-->
                                         </date>
                                         <timeZone key="timeZone" name="America/Los_Angeles">
-                                            <mutableData key="data">
+                                            <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -186,7 +185,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                         </timeZone>
                                     </datePicker>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bU-mx-k1G">
@@ -231,6 +230,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="submitButton" destination="CXd-1a-oVb" id="CJW-gc-7ai"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfI-Lf-6nX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="DUX-2V-08m">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
