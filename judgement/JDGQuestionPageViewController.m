@@ -8,6 +8,7 @@
 
 #import "JDGQuestionPageViewController.h"
 #import "JDGAnswer.h"
+#import "JDGRootViewController.h"
 
 static NSDateFormatter * deadlineDateFormatter;
 
@@ -124,9 +125,15 @@ static NSDateFormatter * deadlineDateFormatter;
 
 -(void)answer
 {
+    BOOL shouldScroll = false;
     if (self.question)
     {
+        shouldScroll = (self.question.myAnswer == nil);
         [self.question answerWithValue:(self.questionAnswerControl.selectedSegmentIndex == 0)];
+    }
+    if (shouldScroll)
+    {
+        [[JDGRootViewController sharedController] scrollRight];
     }
 }
 

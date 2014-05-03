@@ -113,6 +113,18 @@ static JDGRootViewController *sharedController;
     }
 }
 
+-(void)scrollRight
+{
+    if (currentPageIndex < [pageFactories count] - 1)
+    {
+        currentPageIndex++;
+        [self.pageViewController setViewControllers:@[[self pageAtIndex:currentPageIndex]]
+                                          direction:UIPageViewControllerNavigationDirectionForward
+                                           animated:YES
+                                         completion:nil];
+    }
+}
+
 #pragma mark Service methods
 
 -(void)updatePageController

@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet UIButton *buttonView;
 
+-(void)scrollRight;
 -(void)addPageFactories:(NSArray *)factories;
 
 +(JDGRootViewController *)sharedController;
