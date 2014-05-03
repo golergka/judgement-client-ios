@@ -13,6 +13,8 @@
 #import "JDGPageFactory.h"
 #import "JDGQuestionPageFactory.h"
 
+static JDGRootViewController *sharedController;
+
 @interface JDGRootViewController ()
 
 @property (strong, atomic)  NSMutableDictionary *pages;
@@ -36,6 +38,7 @@
     
     self.pages = [[NSMutableDictionary alloc] init];
     self.pageFactories = [[NSMutableArray alloc] init];
+    sharedController = self;
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"QuestionPageViewController"];
     self.pageViewController.dataSource = self;
@@ -70,6 +73,13 @@
     NSUInteger index = ((JDGPageViewController *) viewController).pageIndex;
     index++;
     return [self pageAtIndex:index];
+}
+
+#pragma mark Static methods
+
++(JDGRootViewController *)sharedController
+{
+    return sharedController;
 }
 
 #pragma mark Public methods

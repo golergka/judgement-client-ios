@@ -8,6 +8,8 @@
 
 #import "JDGAddQuestionViewController.h"
 #import "JDGApiClient.h"
+#import "JDGRootViewController.h"
+#import "JDGQuestionPageFactory.h"
 
 @interface JDGAddQuestionViewController ()
 
@@ -53,11 +55,17 @@
 }
 
 - (IBAction)submit:(id)sender {
-    [[JDGApiClient sharedClient] addQuestionWithUser:[JDGValidatedUser thisUser]
-                                                text:self.questionTextField.text
-                                            deadline:self.deadlinePicker.date
-                                     successCallback:nil
-                                        failCallback:nil];
+    [[JDGApiClient sharedClient]
+     addQuestionWithUser: [JDGValidatedUser thisUser]
+     text               : self.questionTextField.text
+     deadline           :self.deadlinePicker.date
+     successCallback    :^(JDGQuestion *question) {
+         JDGQuestionPageFactory *factory = [[JDGQuestionPageFactory alloc] initWithQuestion:question];
+         [[JDGRootViewController sharedController] addPageFactories:@[factory]];
+     }
+     failCallback       :nil
+     ];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

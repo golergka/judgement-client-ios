@@ -15,4 +15,6 @@
 
 -(void)addPageFactories:(NSArray *)factories;
 
++(JDGRootViewController *)sharedController;
+
 @end
