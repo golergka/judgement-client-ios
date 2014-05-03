@@ -13,8 +13,10 @@
 
 @interface JDGRootViewController ()
 
-@property (strong, atomic) NSMutableDictionary *pages;
-@property NSArray *questions;
+@property (strong, atomic)  NSMutableDictionary *pages;
+@property                   NSArray             *questions;
+@property                   NSUInteger          currentPageIndex;
+@property                   NSUInteger          expectingPageIndex;
 
 -(void)refresh;
 -(JDGPageContentViewController *)pageAtIndex:(NSUInteger)index;
@@ -22,7 +24,7 @@
 @end
 
 @implementation JDGRootViewController
-@synthesize pages, pageViewController, questions, buttonView;
+@synthesize pages, pageViewController, questions, buttonView, currentPageIndex;
 
 - (void)viewDidLoad
 {
@@ -34,15 +36,15 @@
     self.pageViewController.dataSource = self;
     
     JDGPageContentViewController *startViewController = [self pageAtIndex:0];
+    self.currentPageIndex = 0;
     [self.pageViewController setViewControllers:@[startViewController]
                                       direction:UIPageViewControllerNavigationDirectionForward
                                        animated:NO
                                      completion:nil];
     self.pageViewController.view.frame = self.view.frame;
+    self.pageViewController.delegate = self;
     [self addChildViewController:pageViewController];
     [self.view insertSubview:pageViewController.view belowSubview:self.buttonView];
-//    [self.view addSubview:pageViewController.view ];
-    
     [self refresh];
     
 }
@@ -53,7 +55,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewControlle
+#pragma mark UIPageViewControllerDataSource
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSUInteger index = ((JDGPageContentViewController *) viewController).pageIndex;
@@ -67,6 +71,8 @@
     index++;
     return [self pageAtIndex:index];
 }
+
+#pragma mark Service methods
 
 - (JDGPageContentViewController*)pageAtIndex:(NSUInteger)index
 {
@@ -109,6 +115,30 @@
          }];
      }
      failCallback:nil];
+}
+
+#pragma mark UIPageViewControllerDelegate
+
+-(void)pageViewController:(UIPageViewController *)pageViewController
+willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    id nextViewController = [pendingViewControllers firstObject];
+    if ([nextViewController isKindOfClass:[JDGPageContentViewController class]])
+    {
+        JDGPageContentViewController *nextPage = (JDGPageContentViewController *)nextViewController;
+        self.expectingPageIndex = nextPage.pageIndex;
+    }
+}
+
+-(void)pageViewController:(UIPageViewController *)pageViewController
+       didFinishAnimating:(BOOL)finished
+  previousViewControllers:(NSArray *)previousViewControllers
+      transitionCompleted:(BOOL)completed
+{
+    if (finished)
+    {
+        self.currentPageIndex = self.expectingPageIndex;
+    }
 }
 
 /*

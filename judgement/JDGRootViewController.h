@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JDGRootViewController : UIViewController <UIPageViewControllerDataSource>
+@interface JDGRootViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet UIButton *buttonView;

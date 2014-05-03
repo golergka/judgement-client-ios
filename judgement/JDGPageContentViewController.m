@@ -13,6 +13,7 @@
 @end
 
 @implementation JDGPageContentViewController
+@synthesize pageIndex;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
