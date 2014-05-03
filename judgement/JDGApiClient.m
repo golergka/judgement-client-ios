@@ -14,6 +14,7 @@
 #import "JDGRegisterApiRequest.h"
 #import "JDGGetAnswerApiRequest.h"
 #import "JDGAnswerApiRequest.h"
+#import "JDGAddQuestionApiRequest.h"
 
 static JDGApiClient *sharedClient;
 
@@ -92,6 +93,18 @@ static JDGApiClient *sharedClient;
                                                            answerValue:answerValue
                                                        successCallback:onSuccess
                                                           failCallback:onFail]];
+}
+
+-(void)addQuestionWithText:(NSString *)questionText
+                  deadline:(NSDate *)questionDeadline
+           successCallback:(addQuestionCallback)onSuccess
+              failCallback:(requestFailCallback)onFail
+{
+    [requests addObject:[[JDGAddQuestionApiRequest alloc] initWithApiClient:self
+                                                                       text:questionText
+                                                                   deadline:questionDeadline
+                                                            successCallback:onSuccess
+                                                               failCallback:onFail]];
 }
 
 #pragma mark Request helpers

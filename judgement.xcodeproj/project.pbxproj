@@ -25,6 +25,8 @@
 		765992C618F1BBD7002A1EDA /* JDGQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 765992C518F1BBD7002A1EDA /* JDGQuestion.m */; };
 		769CE9C41913A20600F7E93F /* JDGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C31913A20600F7E93F /* JDGRootViewController.m */; };
 		769CE9C71913A4C400F7E93F /* JDGPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C61913A4C400F7E93F /* JDGPageContentViewController.m */; };
+		769CE9CA1913E42300F7E93F /* JDGAddQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9C91913E42300F7E93F /* JDGAddQuestionViewController.m */; };
+		769CE9CD19151B9700F7E93F /* JDGAddQuestionApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 769CE9CC19151B9700F7E93F /* JDGAddQuestionApiRequest.m */; };
 		76C5243518FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243418FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m */; };
 		76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243818FB2613007DC30B /* JDGApiClient.m */; };
 		76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C5243E18FB323F007DC30B /* JDGApiRequest.m */; };
@@ -75,6 +77,10 @@
 		769CE9C31913A20600F7E93F /* JDGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGRootViewController.m; sourceTree = "<group>"; };
 		769CE9C51913A4C400F7E93F /* JDGPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGPageContentViewController.h; sourceTree = "<group>"; };
 		769CE9C61913A4C400F7E93F /* JDGPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGPageContentViewController.m; sourceTree = "<group>"; };
+		769CE9C81913E42300F7E93F /* JDGAddQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGAddQuestionViewController.h; sourceTree = "<group>"; };
+		769CE9C91913E42300F7E93F /* JDGAddQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGAddQuestionViewController.m; sourceTree = "<group>"; };
+		769CE9CB19151B9700F7E93F /* JDGAddQuestionApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGAddQuestionApiRequest.h; sourceTree = "<group>"; };
+		769CE9CC19151B9700F7E93F /* JDGAddQuestionApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGAddQuestionApiRequest.m; sourceTree = "<group>"; };
 		76C5243318FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JDGUrlEncoding.h"; sourceTree = "<group>"; };
 		76C5243418FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JDGUrlEncoding.m"; sourceTree = "<group>"; };
 		76C5243718FB2613007DC30B /* JDGApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGApiClient.h; sourceTree = "<group>"; };
@@ -240,6 +246,8 @@
 				76C5245018FF009B007DC30B /* JDGGetAnswerApiRequest.m */,
 				76C5245B190054C3007DC30B /* JDGAnswerApiRequest.h */,
 				76C5245C190054C3007DC30B /* JDGAnswerApiRequest.m */,
+				769CE9CB19151B9700F7E93F /* JDGAddQuestionApiRequest.h */,
+				769CE9CC19151B9700F7E93F /* JDGAddQuestionApiRequest.m */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -253,6 +261,8 @@
 				769CE9C31913A20600F7E93F /* JDGRootViewController.m */,
 				769CE9C51913A4C400F7E93F /* JDGPageContentViewController.h */,
 				769CE9C61913A4C400F7E93F /* JDGPageContentViewController.m */,
+				769CE9C81913E42300F7E93F /* JDGAddQuestionViewController.h */,
+				769CE9C91913E42300F7E93F /* JDGAddQuestionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -360,6 +370,7 @@
 				7659929A18F1AAC3002A1EDA /* JDGAppDelegate.m in Sources */,
 				76C5243518FB1EF1007DC30B /* NSDictionary+JDGUrlEncoding.m in Sources */,
 				765992C618F1BBD7002A1EDA /* JDGQuestion.m in Sources */,
+				769CE9CA1913E42300F7E93F /* JDGAddQuestionViewController.m in Sources */,
 				7659929618F1AAC3002A1EDA /* main.m in Sources */,
 				76C5243F18FB323F007DC30B /* JDGApiRequest.m in Sources */,
 				765992A618F1AAC3002A1EDA /* JDGQuestionDetailViewController.m in Sources */,
@@ -369,6 +380,7 @@
 				76C5245A18FF0DAB007DC30B /* JDGValidatedUser.m in Sources */,
 				76C5245718FF067B007DC30B /* JDGModel.m in Sources */,
 				76C5245118FF009B007DC30B /* JDGGetAnswerApiRequest.m in Sources */,
+				769CE9CD19151B9700F7E93F /* JDGAddQuestionApiRequest.m in Sources */,
 				76C5244218FB35C7007DC30B /* JDGGetQuestionsApiRequest.m in Sources */,
 				769CE9C71913A4C400F7E93F /* JDGPageContentViewController.m in Sources */,
 				76C5243918FB2613007DC30B /* JDGApiClient.m in Sources */,

@@ -19,6 +19,7 @@ typedef void (^getQuestionsCallback)(NSArray *);
 typedef void (^registerCallback)    (JDGValidatedUser *);
 typedef void (^getAnswerCallback)   (JDGAnswer *);
 typedef void (^answerCallback)      (void);
+typedef void (^addQuestionCallback) (JDGQuestion *);
 
 typedef void (^requestFailCallback) (void);
 
@@ -43,6 +44,11 @@ typedef void (^requestFailCallback) (void);
           answerValue:(BOOL)answerValue
       successCallback:(answerCallback)onSuccess
          failCallback:(requestFailCallback)onFail;
+
+-(void)addQuestionWithText:(NSString *)questionText
+                  deadline:(NSDate *)questionDeadline
+           successCallback:(addQuestionCallback)onSuccess
+              failCallback:(requestFailCallback)onFail;
 
 
 -(NSURL*)urlForParams:(NSDictionary*)params;

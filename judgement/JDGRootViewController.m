@@ -22,7 +22,7 @@
 @end
 
 @implementation JDGRootViewController
-@synthesize pages, pageViewController, questions;
+@synthesize pages, pageViewController, questions, buttonView;
 
 - (void)viewDidLoad
 {
@@ -39,9 +39,9 @@
                                        animated:NO
                                      completion:nil];
     self.pageViewController.view.frame = self.view.frame;
-    
     [self addChildViewController:pageViewController];
-    [self.view addSubview:pageViewController.view];
+    [self.view insertSubview:pageViewController.view belowSubview:self.buttonView];
+//    [self.view addSubview:pageViewController.view ];
     
     [self refresh];
     
