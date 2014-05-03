@@ -13,5 +13,7 @@
 @interface JDGQuestionPageFactory : JDGPageFactory
 
 -(id)initWithQuestion:(JDGQuestion *)question;
+-(id)initWithQuestion:(JDGQuestion *)question
+                 hint:(NSString*)hint;
 
 @end

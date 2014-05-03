@@ -12,11 +12,13 @@
 
 @interface JDGQuestionPageViewController : JDGPageViewController
 
-@property (strong, nonatomic) JDGQuestion *question;
+@property (strong, nonatomic)   JDGQuestion *question;
+@property                       NSString *hint;
 
 @property (weak, nonatomic) IBOutlet UILabel            *questionTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel            *questionDeadlineLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *questionAnswerControl;
+@property (weak, nonatomic) IBOutlet UILabel            *hintLabel;
 
 @property (weak, nonatomic) IBOutlet UIView             *loadingView;
 @property (weak, nonatomic) IBOutlet UIView             *questionView;

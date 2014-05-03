@@ -12,9 +12,12 @@
 static NSDateFormatter * deadlineDateFormatter;
 
 @interface JDGQuestionPageViewController ()
+{
+    JDGQuestion *_question;
+    NSString    *_hint;
+}
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 -(void)configureView;
--(void)update;
 +(NSDateFormatter*)deadlineDateFormatter;
 @end
 
@@ -38,7 +41,22 @@ static NSDateFormatter * deadlineDateFormatter;
     return deadlineDateFormatter;
 }
 
-#pragma mark - Managing the detail item
+#pragma mark - Properties
+
+-(void)setHint:(NSString *)hint
+{
+    _hint = hint;
+    if (self.hintLabel)
+    {
+        self.hintLabel.text = hint;
+        self.hintLabel.hidden = (hint.length == 0);
+    }
+}
+
+-(NSString*)hint
+{
+    return _hint;
+}
 
 - (void)setQuestion:(JDGQuestion *)newQuestion
 {
@@ -64,6 +82,13 @@ static NSDateFormatter * deadlineDateFormatter;
         [self.masterPopoverController dismissPopoverAnimated:YES];
     }        
 }
+
+-(JDGQuestion*)question
+{
+    return _question;
+}
+
+#pragma mark Service methods
 
 - (void)configureView
 {
@@ -114,6 +139,8 @@ static NSDateFormatter * deadlineDateFormatter;
     [self.questionAnswerControl addTarget:self
                                    action:@selector(answer)
                          forControlEvents:UIControlEventValueChanged];
+    
+    self.hint = _hint;
 }
 
 - (void)didReceiveMemoryWarning

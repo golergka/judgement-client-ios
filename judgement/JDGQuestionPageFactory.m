@@ -14,8 +14,9 @@
     JDGQuestion *_question;
 }
 
-@property (strong)          JDGQuestion *question;
-@property (weak)    JDGQuestionPageViewController *viewController;
+@property (strong)  JDGQuestion                     *question;
+@property (strong)  NSString                        *hint;
+@property (weak)    JDGQuestionPageViewController   *viewController;
 
 @end
 
@@ -28,6 +29,16 @@
     if (self = [super init])
     {
         self.question = question;
+    }
+    return self;
+}
+
+-(id)initWithQuestion:(JDGQuestion *)question
+                 hint:(NSString *)hint
+{
+    if (self = [self initWithQuestion:question])
+    {
+        self.hint = hint;
     }
     return self;
 }
@@ -55,6 +66,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
     self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"QuestionDetailViewController"];
     self.viewController.question = self.question;
+    self.viewController.hint = self.hint;
     return self.viewController;
 }
 

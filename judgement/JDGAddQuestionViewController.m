@@ -60,7 +60,8 @@
      text               : self.questionTextField.text
      deadline           :self.deadlinePicker.date
      successCallback    :^(JDGQuestion *question) {
-         JDGQuestionPageFactory *factory = [[JDGQuestionPageFactory alloc] initWithQuestion:question];
+         JDGQuestionPageFactory *factory = [[JDGQuestionPageFactory alloc] initWithQuestion:question
+                                                                                       hint:@"Your question have been added!"];
          [[JDGRootViewController sharedController] addPageFactories:@[factory]];
      }
      failCallback       :nil
