@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="674" y="7"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Facebook Login Page View Controller-->
         <scene sceneID="FOX-wm-I5a">
             <objects>
-                <viewController storyboardIdentifier="FacebookLoginViewController" id="B3e-VX-bUg" customClass="JDGPageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FacebookLoginViewController" id="B3e-VX-bUg" customClass="JDGFacebookLoginPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pbA-3e-lL5"/>
                         <viewControllerLayoutGuide type="bottom" id="3Tn-jL-ej1"/>
@@ -199,7 +199,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Why don't you login with facebook?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="XFl-bM-B76" userLabel="Hint">
-                                <rect key="frame" x="14" y="20" width="280" height="294"/>
+                                <rect key="frame" x="14" y="20" width="280" height="226"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,6 +208,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="hintLabel" destination="XFl-bM-B76" id="2gX-Yo-Gqe"/>
+                        <outlet property="loginView" destination="zAI-D0-Mu5" id="xtm-WI-g1q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdB-h6-iMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

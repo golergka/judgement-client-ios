@@ -14,6 +14,8 @@
 #import "JDGQuestionPageFactory.h"
 #import "JDGFacebookLoginPageFactory.h"
 
+#import <FacebookSDK/FacebookSDK.h>
+
 static JDGRootViewController *sharedController;
 
 @interface JDGRootViewController ()
@@ -170,10 +172,19 @@ static JDGRootViewController *sharedController;
      getQuestionsWithSuccessCallback:^(NSArray* newQuestions) {
          self.questions = newQuestions;
          NSMutableArray *newPageFactories = [[NSMutableArray alloc] initWithCapacity:(newQuestions.count + 1)];
+         BOOL shouldInsertFacebook = ![FBSession activeSession].isOpen;
          for (JDGQuestion *question in newQuestions) {
              [newPageFactories addObject:[[JDGQuestionPageFactory alloc] initWithQuestion:question]];
+             if (shouldInsertFacebook && (arc4random() % 3 == 1))
+             {
+                 [newPageFactories addObject:[[JDGFacebookLoginPageFactory alloc] init]];
+                 shouldInsertFacebook = false;
+             }
          }
-         [newPageFactories addObject:[[JDGFacebookLoginPageFactory alloc] init]];
+         if (shouldInsertFacebook)
+         {
+             [newPageFactories addObject:[[JDGFacebookLoginPageFactory alloc] init]];
+         }
          [self addPageFactories:newPageFactories];
      }
      failCallback:nil];
