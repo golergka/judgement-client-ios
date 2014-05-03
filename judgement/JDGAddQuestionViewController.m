@@ -53,7 +53,8 @@
 }
 
 - (IBAction)submit:(id)sender {
-    [[JDGApiClient sharedClient] addQuestionWithText:self.questionTextField.text
+    [[JDGApiClient sharedClient] addQuestionWithUser:[JDGValidatedUser thisUser]
+                                                text:self.questionTextField.text
                                             deadline:self.deadlinePicker.date
                                      successCallback:nil
                                         failCallback:nil];

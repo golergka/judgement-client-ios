@@ -12,6 +12,7 @@
 @interface JDGAddQuestionApiRequest : JDGApiRequest
 
 -(id)initWithApiClient:(JDGApiClient *)client
+                  user:(JDGValidatedUser *)user
                   text:(NSString *)questionText
               deadline:(NSDate *)questionDate
        successCallback:(addQuestionCallback)onSuccess

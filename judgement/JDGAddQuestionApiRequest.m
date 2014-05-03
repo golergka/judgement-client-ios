@@ -7,6 +7,7 @@
 //
 
 #import "JDGAddQuestionApiRequest.h"
+#import "JDGModel.h"
 
 @implementation JDGAddQuestionApiRequest
 {
@@ -16,6 +17,7 @@
 }
 
 -(id)initWithApiClient:(JDGApiClient *)client
+                  user:(JDGValidatedUser *)user
                   text:(NSString *)questionText
               deadline:(NSDate *)questionDate
        successCallback:(addQuestionCallback)onSuccess
@@ -24,9 +26,10 @@
     if (self = [super initWithApiClient:client failCallback:onFail])
     {
         NSDictionary *params = @{
-            @"method": @"addQuestion",
-            @"questionText": questionText,
-            @"questionDeadline":questionDate
+            @"method"           : @"addQuestion",
+            @"vendorIdHash"     : [user vendorIdHash],
+            @"questionText"     : questionText,
+            @"questionDeadline" : [[JDGModel jsonDateFormatter] stringFromDate:questionDate]
         };
         NSURL *url = [client urlForParams:params];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -43,11 +46,13 @@
     JDGQuestion *result = [[JDGQuestion alloc] initWithJson:content];
     if (result != nil)
     {
-        _onSuccess(result);
+        if (_onSuccess != nil)
+            _onSuccess(result);
     }
     else
     {
-        _onFail();
+        if (_onFail != nil)
+            _onFail();
     }
     [self.apiClient completeRequest:self];
 }

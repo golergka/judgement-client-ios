@@ -95,12 +95,14 @@ static JDGApiClient *sharedClient;
                                                           failCallback:onFail]];
 }
 
--(void)addQuestionWithText:(NSString *)questionText
+-(void)addQuestionWithUser:(JDGValidatedUser *)user
+                      text:(NSString *)questionText
                   deadline:(NSDate *)questionDeadline
            successCallback:(addQuestionCallback)onSuccess
               failCallback:(requestFailCallback)onFail
 {
     [requests addObject:[[JDGAddQuestionApiRequest alloc] initWithApiClient:self
+                                                                       user:user
                                                                        text:questionText
                                                                    deadline:questionDeadline
                                                             successCallback:onSuccess

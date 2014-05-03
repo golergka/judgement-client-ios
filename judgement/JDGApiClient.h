@@ -45,7 +45,8 @@ typedef void (^requestFailCallback) (void);
       successCallback:(answerCallback)onSuccess
          failCallback:(requestFailCallback)onFail;
 
--(void)addQuestionWithText:(NSString *)questionText
+-(void)addQuestionWithUser:(JDGValidatedUser *)user
+                      text:(NSString *)questionText
                   deadline:(NSDate *)questionDeadline
            successCallback:(addQuestionCallback)onSuccess
               failCallback:(requestFailCallback)onFail;
