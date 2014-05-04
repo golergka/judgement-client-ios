@@ -8,6 +8,7 @@
 
 #import "JDGFacebookLoginPageViewController.h"
 #import "JDGRootViewController.h"
+#import "JDGApiClient.h"
 
 @interface JDGFacebookLoginPageViewController ()
 
@@ -42,6 +43,12 @@
                            user:(id<FBGraphUser>)user
 {
     self.hintLabel.text = [NSString stringWithFormat:@"Atta boy! Great to see you, %@.", user.first_name];
+    
+    [[JDGApiClient sharedClient] setFacebookAccessToken:[JDGValidatedUser thisUser]
+                                    facebookAccessToken:[FBSession activeSession].accessTokenData.accessToken
+                                        successCallback:nil
+                                           failCallback:nil];
+    
     [[JDGRootViewController sharedController] scrollRight];
 }
 

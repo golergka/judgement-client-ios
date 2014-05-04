@@ -15,11 +15,12 @@
 @class JDGGetQuestionsApiRequest;
 @class JDGRegisterApiRequest;
 
-typedef void (^getQuestionsCallback)(NSArray *);
-typedef void (^registerCallback)    (JDGValidatedUser *);
-typedef void (^getAnswerCallback)   (JDGAnswer *);
-typedef void (^answerCallback)      (void);
-typedef void (^addQuestionCallback) (JDGQuestion *);
+typedef void (^getQuestionsCallback)            (NSArray *);
+typedef void (^registerCallback)                (JDGValidatedUser *);
+typedef void (^getAnswerCallback)               (JDGAnswer *);
+typedef void (^answerCallback)                  (void);
+typedef void (^setFacebookAccessTokenCallback)  (void);
+typedef void (^addQuestionCallback)             (JDGQuestion *);
 
 typedef void (^requestFailCallback) (void);
 
@@ -50,6 +51,11 @@ typedef void (^requestFailCallback) (void);
                   deadline:(NSDate *)questionDeadline
            successCallback:(addQuestionCallback)onSuccess
               failCallback:(requestFailCallback)onFail;
+
+-(void)setFacebookAccessToken:(JDGValidatedUser *)user
+          facebookAccessToken:(NSString *)token
+              successCallback:(setFacebookAccessTokenCallback)onSuccess
+                 failCallback:(requestFailCallback)onFail;
 
 
 -(NSURL*)urlForParams:(NSDictionary*)params;

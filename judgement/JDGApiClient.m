@@ -15,6 +15,7 @@
 #import "JDGGetAnswerApiRequest.h"
 #import "JDGAnswerApiRequest.h"
 #import "JDGAddQuestionApiRequest.h"
+#import "JDGSetFacebookAccessTokenRequest.h"
 
 static JDGApiClient *sharedClient;
 
@@ -107,6 +108,18 @@ static JDGApiClient *sharedClient;
                                                                    deadline:questionDeadline
                                                             successCallback:onSuccess
                                                                failCallback:onFail]];
+}
+
+-(void)setFacebookAccessToken:(JDGValidatedUser *)user
+          facebookAccessToken:(NSString *)token
+              successCallback:(setFacebookAccessTokenCallback)onSuccess
+                 failCallback:(requestFailCallback)onFail
+{
+    [requests addObject:[[JDGSetFacebookAccessTokenRequest alloc] initWithApiClient:self
+                                                                               user:user
+                                                                facebookAccessToken:token
+                                                                    successCallback:onSuccess
+                                                                       failCallback:onFail]];
 }
 
 #pragma mark Request helpers
