@@ -320,9 +320,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7659928518F1AAC3002A1EDA /* judgement */ = {
+		7659928518F1AAC3002A1EDA /* Pred!ct */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 765992BE18F1AAC3002A1EDA /* Build configuration list for PBXNativeTarget "judgement" */;
+			buildConfigurationList = 765992BE18F1AAC3002A1EDA /* Build configuration list for PBXNativeTarget "Pred!ct" */;
 			buildPhases = (
 				7659928218F1AAC3002A1EDA /* Sources */,
 				7659928318F1AAC3002A1EDA /* Frameworks */,
@@ -332,14 +332,14 @@
 			);
 			dependencies = (
 			);
-			name = judgement;
+			name = "Pred!ct";
 			productName = judgement;
 			productReference = 7659928618F1AAC3002A1EDA /* judgement.app */;
 			productType = "com.apple.product-type.application";
 		};
-		765992AC18F1AAC3002A1EDA /* judgementTests */ = {
+		765992AC18F1AAC3002A1EDA /* Pred!ctTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 765992C118F1AAC3002A1EDA /* Build configuration list for PBXNativeTarget "judgementTests" */;
+			buildConfigurationList = 765992C118F1AAC3002A1EDA /* Build configuration list for PBXNativeTarget "Pred!ctTests" */;
 			buildPhases = (
 				765992A918F1AAC3002A1EDA /* Sources */,
 				765992AA18F1AAC3002A1EDA /* Frameworks */,
@@ -350,7 +350,7 @@
 			dependencies = (
 				765992B318F1AAC3002A1EDA /* PBXTargetDependency */,
 			);
-			name = judgementTests;
+			name = "Pred!ctTests";
 			productName = judgementTests;
 			productReference = 765992AD18F1AAC3002A1EDA /* judgementTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -383,8 +383,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7659928518F1AAC3002A1EDA /* judgement */,
-				765992AC18F1AAC3002A1EDA /* judgementTests */,
+				7659928518F1AAC3002A1EDA /* Pred!ct */,
+				765992AC18F1AAC3002A1EDA /* Pred!ctTests */,
 			);
 		};
 /* End PBXProject section */
@@ -457,7 +457,7 @@
 /* Begin PBXTargetDependency section */
 		765992B318F1AAC3002A1EDA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7659928518F1AAC3002A1EDA /* judgement */;
+			target = 7659928518F1AAC3002A1EDA /* Pred!ct */;
 			targetProxy = 765992B218F1AAC3002A1EDA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -662,7 +662,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		765992BE18F1AAC3002A1EDA /* Build configuration list for PBXNativeTarget "judgement" */ = {
+		765992BE18F1AAC3002A1EDA /* Build configuration list for PBXNativeTarget "Pred!ct" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				765992BF18F1AAC3002A1EDA /* Debug */,
@@ -671,7 +671,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		765992C118F1AAC3002A1EDA /* Build configuration list for PBXNativeTarget "judgementTests" */ = {
+		765992C118F1AAC3002A1EDA /* Build configuration list for PBXNativeTarget "Pred!ctTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				765992C218F1AAC3002A1EDA /* Debug */,
