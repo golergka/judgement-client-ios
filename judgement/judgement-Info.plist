@@ -2,21 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>FacebookAppID</key>
-	<string>1397335227217058</string>
-	<key>FacebookDisplayName</key>
-	<string>Predict</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb1397335227217058</string>
-			</array>
-		</dict>
-	</array>
-	<key>JDGApiServer</key>
-	<string>http://judgement.herokuapp.com/api</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -32,11 +17,26 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1397335227217058</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>2</string>
+	<key>FacebookAppID</key>
+	<string>1397335227217058</string>
+	<key>FacebookDisplayName</key>
+	<string>Predict</string>
+	<key>JDGApiServer</key>
+	<string>http://judgement.herokuapp.com/api</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>
